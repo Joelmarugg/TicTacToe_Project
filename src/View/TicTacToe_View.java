@@ -115,7 +115,7 @@ public class TicTacToe_View {
         MenuBar.getMenus().add(OptionsMenu);
 
 
-//RDGSXGHSdsgv
+
         root.setTop(MenuBar);
         root.setCenter(GameGrid);
         root.setBottom(ControlArea);
