@@ -12,6 +12,19 @@ import javafx.stage.Stage;
 
 public class TicTacToe_View {
 
+     public boolean Online_1v1 = false;
+     public boolean Offline_1v1 = true;
+     public boolean AI = false;
+     public Button Btn1; public Button Btn2; public Button Btn3;
+     public Button Btn4; public Button Btn5; public Button Btn6;
+     public Button Btn7; public Button Btn8; public Button Btn9;
+     public Button New_Game_Btn;
+     public Button Play_Btn;
+     public GridPane GameGrid;
+     public Menu ModusMenu;
+
+
+
     public TicTacToe_View(Stage PrimaryStage){
 
 
@@ -19,7 +32,7 @@ public class TicTacToe_View {
 
 ////////////////////////////////GameGrid/////////////////////////////////////
         //GameGrid to play
-        GridPane GameGrid = new GridPane();
+        GameGrid = new GridPane();
         GameGrid.setStyle("-fx-grid-lines-visible: true");
 
         //Set the Row/ColumnConstraints
@@ -36,9 +49,9 @@ public class TicTacToe_View {
         }
 
         //Create 9 Buttons
-        Button Btn1 = new Button();Button Btn2 = new Button();Button Btn3 = new Button();
-        Button Btn4 = new Button();Button Btn5 = new Button();Button Btn6 = new Button();
-        Button Btn7 = new Button();Button Btn8 = new Button();Button Btn9 = new Button();
+        Btn1 = new Button();Btn2 = new Button();Btn3 = new Button();
+        Btn4 = new Button();Btn5 = new Button();Btn6 = new Button();
+        Btn7 = new Button();Btn8 = new Button();Btn9 = new Button();
 
         // Make Button fill out the grid
         Btn1.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
@@ -69,14 +82,14 @@ public class TicTacToe_View {
         VBox Play_Btn_Box = new VBox();
         Play_Btn_Box.setAlignment(Pos.CENTER);
         Play_Btn_Box.prefWidthProperty().bind(ControlArea.widthProperty());
-        Button Play_Btn = new Button("Let's Play!");
+        Play_Btn = new Button("Let's Play!");
         Play_Btn_Box.getChildren().add(Play_Btn);
 
         // VBox for New Game button
         VBox New_Game_Box = new VBox();
         New_Game_Box.setAlignment(Pos.CENTER);
         New_Game_Box.prefWidthProperty().bind(ControlArea.widthProperty());
-        Button New_Game_Btn = new Button("New Game");
+        New_Game_Btn = new Button("New Game");
         New_Game_Box.getChildren().add(New_Game_Btn);
 
         // VBox for Round Counter label
@@ -98,6 +111,16 @@ public class TicTacToe_View {
         MenuBar MenuBar = new MenuBar();
 
         // HelpMenu for game description
+        ModusMenu = new Menu("Modus", null,
+                new MenuItem("Offline 1 Vs. 1"),
+                new MenuItem("Online 1 Vs. 1"),
+                new Menu("1 Vs. AI", null,
+                         new MenuItem("Easy"),
+                         new MenuItem("Medium"),
+                         new MenuItem("Hard")));
+
+
+        // HelpMenu for game description
         Menu HelpMenu = new Menu("Help",null,
                 new MenuItem("How to play?"));
 
@@ -113,7 +136,7 @@ public class TicTacToe_View {
 
         MenuBar.getMenus().add(HelpMenu);
         MenuBar.getMenus().add(OptionsMenu);
-
+        MenuBar.getMenus().add(ModusMenu);
 
 
         root.setTop(MenuBar);
@@ -127,7 +150,7 @@ public class TicTacToe_View {
 
 
 
-        Scene scene = new Scene(root, 1300, 1300);
+        Scene scene = new Scene(root, 800, 800);
         PrimaryStage.setTitle("Tic Tac Toe");
         PrimaryStage.setScene(scene);
         PrimaryStage.show();
