@@ -1,6 +1,6 @@
 package Model;
 
-public class Evaluation extends TicTacToe_ModelOffline {
+public class Evaluation extends Game {
 
     public static boolean X_CheckForWinner() {
         if (PlayBoard[0][0] == 'X' && PlayBoard[0][1] == 'X' && PlayBoard[0][2] == 'X') {

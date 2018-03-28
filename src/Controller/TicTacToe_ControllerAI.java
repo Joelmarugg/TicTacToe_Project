@@ -7,7 +7,7 @@ import View.TicTacToe_View;
 import javafx.scene.control.Menu;
 import javafx.stage.Stage;
 
-public class TicTacToe_ControllerAI {
+public class TicTacToe_ControllerAI extends ChangeModus {
 
     TicTacToe_View view;
     TicTacToe_ModelAI model;
@@ -24,42 +24,26 @@ public class TicTacToe_ControllerAI {
 
             ((Menu) (view.ModusMenu.getItems().get(2))).getItems().get(1).setOnAction((event) -> {
 
-                System.out.println("You changed the modus to AI, Medium");
-                Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
-                TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-                TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI();
-                TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI,newView,2);
-
+                ChangeToAIMedium(view);
+                model.NewGame();
             });
 
             ((Menu) (view.ModusMenu.getItems().get(2))).getItems().get(2).setOnAction((event) -> {
 
-                System.out.println("You changed the modus to AI, Hard");
-                Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
-                TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-                TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI();
-                TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI,newView,3);
-
+                ChangeToAIHard(view);
+                model.NewGame();
             });
 
             view.ModusMenu.getItems().get(0).setOnAction((event) -> {
 
-                System.out.println("You changed the modus to Offline");
-                Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
-                TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-                TicTacToe_ModelOffline modelOffline = new TicTacToe_ModelOffline();
-                TicTacToe_ControllerOffline controllerOffline = new TicTacToe_ControllerOffline(modelOffline,newView);
-
+                ChangeToOffline(view);
+                model.NewGame();
             });
 
             view.ModusMenu.getItems().get(1).setOnAction((event) -> {
 
-                System.out.println("You changed the modus to Online");
-                Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
-                TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-                TicTacToe_ModelOnline modelOnline = new TicTacToe_ModelOnline();
-                TicTacToe_ControllerOnline controllerOnline = new TicTacToe_ControllerOnline(modelOnline,newView);
-
+                ChangeToOnline(view);
+                model.NewGame();
             });
 
             view.Btn1.setOnAction((event) ->
@@ -72,42 +56,26 @@ public class TicTacToe_ControllerAI {
 
             ((Menu) (view.ModusMenu.getItems().get(2))).getItems().get(0).setOnAction((event) -> {
 
-                System.out.println("You changed the modus to AI, Easy");
-                Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
-                TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-                TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI();
-                TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI,newView,1);
-
+                ChangeToAIEasy(view);
+                model.NewGame();
             });
 
             ((Menu) (view.ModusMenu.getItems().get(2))).getItems().get(2).setOnAction((event) -> {
 
-                System.out.println("You changed the modus to AI, Hard");
-                Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
-                TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-                TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI();
-                TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI,newView,3);
-
+                ChangeToAIHard(view);
+                model.NewGame();
             });
 
             view.ModusMenu.getItems().get(0).setOnAction((event) -> {
 
-                System.out.println("You changed the modus to Offline");
-                Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
-                TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-                TicTacToe_ModelOffline modelOffline = new TicTacToe_ModelOffline();
-                TicTacToe_ControllerOffline controllerOffline = new TicTacToe_ControllerOffline(modelOffline,newView);
-
+                ChangeToOffline(view);
+                model.NewGame();
             });
 
             view.ModusMenu.getItems().get(1).setOnAction((event) -> {
 
-                System.out.println("You changed the modus to Online");
-                Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
-                TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-                TicTacToe_ModelOnline modelOnline = new TicTacToe_ModelOnline();
-                TicTacToe_ControllerOnline controllerOnline = new TicTacToe_ControllerOnline(modelOnline,newView);
-
+                ChangeToOnline(view);
+                model.NewGame();
             });
 
             view.Btn1.setOnAction((event) ->
@@ -120,47 +88,34 @@ public class TicTacToe_ControllerAI {
 
             ((Menu) (view.ModusMenu.getItems().get(2))).getItems().get(0).setOnAction((event) -> {
 
-                System.out.println("You changed the modus to AI, Easy");
-                Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
-                TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-                TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI();
-                TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI,newView,1);
-
+                ChangeToAIEasy(view);
+                model.NewGame();
             });
 
             ((Menu) (view.ModusMenu.getItems().get(2))).getItems().get(1).setOnAction((event) -> {
 
-                System.out.println("You changed the modus to AI, Medium");
-                Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
-                TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-                TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI();
-                TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI,newView,2);
-
+                ChangeToAIMedium(view);
+                model.NewGame();
             });
 
             view.ModusMenu.getItems().get(0).setOnAction((event) -> {
 
-                System.out.println("You changed the modus to Offline");
-                Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
-                TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-                TicTacToe_ModelOffline modelOffline = new TicTacToe_ModelOffline();
-                TicTacToe_ControllerOffline controllerOffline = new TicTacToe_ControllerOffline(modelOffline,newView);
-
+                ChangeToOffline(view);
+                model.NewGame();
             });
 
             view.ModusMenu.getItems().get(1).setOnAction((event) -> {
 
-                System.out.println("You changed the modus to Online");
-                Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
-                TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-                TicTacToe_ModelOnline modelOnline = new TicTacToe_ModelOnline();
-                TicTacToe_ControllerOnline controllerOnline = new TicTacToe_ControllerOnline(modelOnline,newView);
+                ChangeToOnline(view);
+                model.NewGame();
+            });
+
+            view.Btn1.setOnAction((event) -> {
+                model.O_move(0, 0);
 
             });
 
-            view.Btn1.setOnAction((event) ->
-                    System.out.println("AIIIModeee hard")
-            );
+
 
         }
     }
