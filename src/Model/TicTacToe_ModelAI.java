@@ -35,7 +35,7 @@ public class TicTacToe_ModelAI extends Game {
         }
         else if (r == 4 ) {
             X_move(2,2);
-            System.out.println("Computer moves to " + r);
+            System.out.println("Computer moves to " + r); //KFLSD
         }
 
     }
