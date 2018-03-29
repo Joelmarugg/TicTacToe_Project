@@ -15,7 +15,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus {
         this.model = model;
         this.view = view;
 
-        DisableAllButtons();
+        DisableAllButtons(view);
 
 
         view.ModusMenu.getItems().get(0).setDisable(true);
@@ -49,8 +49,8 @@ public class TicTacToe_ControllerOffline extends ChangeModus {
         view.New_Game_Btn.setOnAction((event) -> {
             model.NewGame();
             model.ResetNumberOfMoves();
-            ResetTextOfButtons();
-            EnableAllButtons();
+            ResetTextOfButtons(view);
+            EnableAllButtons(view);
             System.out.println("you started a new game");
         });
 
@@ -60,14 +60,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus {
                 view.Btn1.setText("O");
                 model.O_move(0,0);
                 if (Evaluation.O_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
                 view.Btn1.setText("X");
                 model.X_move(0,0);
                 if (Evaluation.X_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player X winns");
                 }
             }
@@ -86,14 +86,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus {
                 view.Btn2.setText("O");
                 model.O_move(0,1);
                 if (Evaluation.O_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
                 view.Btn2.setText("X");
                 model.X_move(0,1);
                 if (Evaluation.X_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player X winns");
                 }
             }
@@ -110,14 +110,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus {
                 view.Btn3.setText("O");
                 model.O_move(0,2);
                 if (Evaluation.O_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
                 view.Btn3.setText("X");
                 model.X_move(0,2);
                 if (Evaluation.X_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player X winns");
                 }
             }
@@ -134,14 +134,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus {
                 view.Btn4.setText("O");
                 model.O_move(1,0);
                 if (Evaluation.O_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
                 view.Btn4.setText("X");
                 model.X_move(1,0);
                 if (Evaluation.X_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player X winns");
                 }
             }
@@ -158,14 +158,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus {
                 view.Btn5.setText("O");
                 model.O_move(1,1);
                 if (Evaluation.O_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
                 view.Btn5.setText("X");
                 model.X_move(1,1);
                 if (Evaluation.X_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player X winns");
                 }
             }
@@ -182,14 +182,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus {
                 view.Btn6.setText("O");
                 model.O_move(1,2);
                 if (Evaluation.O_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
                 view.Btn6.setText("X");
                 model.X_move(1,2);
                 if (Evaluation.X_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player X winns");
                 }
             }
@@ -206,14 +206,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus {
                 view.Btn7.setText("O");
                 model.O_move(2,0);
                 if (Evaluation.O_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
                 view.Btn7.setText("X");
                 model.X_move(2,0);
                 if (Evaluation.X_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player X winns");
                 }
             }
@@ -230,14 +230,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus {
                 view.Btn8.setText("O");
                 model.O_move(2,1);
                 if (Evaluation.O_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
                 view.Btn8.setText("X");
                 model.X_move(2,1);
                 if (Evaluation.X_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player X winns");
                 }
             }
@@ -254,14 +254,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus {
                 view.Btn9.setText("O");
                 model.O_move(2,2);
                 if (Evaluation.O_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
                 view.Btn9.setText("X");
                 model.X_move(2,2);
                 if (Evaluation.X_CheckForWinner()){
-                    DisableAllButtons();
+                    DisableAllButtons(view);
                     System.out.println("Player X winns");
                 }
             }
@@ -274,21 +274,5 @@ public class TicTacToe_ControllerOffline extends ChangeModus {
         });
     }
 
-    public void DisableAllButtons(){
-        view.Btn1.setDisable(true); view.Btn4.setDisable(true); view.Btn7.setDisable(true);
-        view.Btn2.setDisable(true); view.Btn5.setDisable(true); view.Btn8.setDisable(true);
-        view.Btn3.setDisable(true); view.Btn6.setDisable(true); view.Btn9.setDisable(true);
-    }
 
-    public void EnableAllButtons(){
-        view.Btn1.setDisable(false); view.Btn4.setDisable(false); view.Btn7.setDisable(false);
-        view.Btn2.setDisable(false); view.Btn5.setDisable(false); view.Btn8.setDisable(false);
-        view.Btn3.setDisable(false); view.Btn6.setDisable(false); view.Btn9.setDisable(false);
-    }
-
-    public void ResetTextOfButtons(){
-        view.Btn1.setText(""); view.Btn4.setText(""); view.Btn7.setText("");
-        view.Btn2.setText(""); view.Btn5.setText(""); view.Btn8.setText("");
-        view.Btn3.setText(""); view.Btn6.setText(""); view.Btn9.setText("");
-    }
 }

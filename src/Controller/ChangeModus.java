@@ -66,5 +66,31 @@ public class ChangeModus {
         TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI,newView,3);
     }
 
+    public void DisableAllButtons(TicTacToe_View view){
+
+        this.view = view;
+
+        view.Btn1.setDisable(true); view.Btn4.setDisable(true); view.Btn7.setDisable(true);
+        view.Btn2.setDisable(true); view.Btn5.setDisable(true); view.Btn8.setDisable(true);
+        view.Btn3.setDisable(true); view.Btn6.setDisable(true); view.Btn9.setDisable(true);
+    }
+
+    public void EnableAllButtons(TicTacToe_View view){
+
+        this.view = view;
+
+        view.Btn1.setDisable(false); view.Btn4.setDisable(false); view.Btn7.setDisable(false);
+        view.Btn2.setDisable(false); view.Btn5.setDisable(false); view.Btn8.setDisable(false);
+        view.Btn3.setDisable(false); view.Btn6.setDisable(false); view.Btn9.setDisable(false);
+    }
+
+    public void ResetTextOfButtons(TicTacToe_View view){
+
+        this.view = view;
+
+        view.Btn1.setText(""); view.Btn4.setText(""); view.Btn7.setText("");
+        view.Btn2.setText(""); view.Btn5.setText(""); view.Btn8.setText("");
+        view.Btn3.setText(""); view.Btn6.setText(""); view.Btn9.setText("");
+    }
 
 }

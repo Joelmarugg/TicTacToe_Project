@@ -115,6 +115,14 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             });
 
+            view.New_Game_Btn.setOnAction((event) -> {
+                model.NewGame();
+                model.ResetNumberOfMoves();
+                ResetTextOfButtons(view);
+                EnableAllButtons(view);
+                System.out.println("you started a new game");
+            });
+
 
 
         }
