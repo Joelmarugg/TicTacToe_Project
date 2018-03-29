@@ -41,7 +41,7 @@ public class ChangeModus {
         System.out.println("You changed the modus to AI, Easy");
         Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
         TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-        TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI(view);
+        TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI(view, 1);
         TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI, newView, 1);
     }
 
@@ -53,7 +53,7 @@ public class ChangeModus {
         System.out.println("You changed the modus to AI, Medium");
         Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
         TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-        TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI(view);
+        TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI(view,2);
         TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI,newView,2);
     }
 
@@ -65,7 +65,7 @@ public class ChangeModus {
         System.out.println("You changed the modus to AI, Hard");
         Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
         TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-        TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI(view);
+        TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI(view, 3);
         TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI,newView,3);
     }
 

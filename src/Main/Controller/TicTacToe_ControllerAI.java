@@ -51,6 +51,17 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                     System.out.println("AIIIModeee easy")
             );
 
+            view.New_Game_Btn.setOnAction((event) -> {
+                model.NewGame();
+                System.out.println("you started a new game");
+                ResetTextOfButtons(view);
+                EnableAllButtons(view);
+                model.setBeginner();
+                if(model.isBeginner)
+                    ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
+
+            });
+
 
         }else if (level == 2){
             ((Menu) (view.ModusMenu.getItems().get(2))).getItems().get(1).setDisable(true);
@@ -82,6 +93,17 @@ public class TicTacToe_ControllerAI extends ChangeModus {
             view.Btn1.setOnAction((event) ->
                     System.out.println("AIIIModeee medium")
             );
+
+            view.New_Game_Btn.setOnAction((event) -> {
+                model.NewGame();
+                System.out.println("you started a new game");
+                ResetTextOfButtons(view);
+                EnableAllButtons(view);
+                model.setBeginner();
+                if(model.isBeginner)
+                    ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
+
+            });
 
 
         }else if (level == 3){
@@ -279,7 +301,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 ResetTextOfButtons(view);
                 EnableAllButtons(view);
                 model.setBeginner();
-                if(model.isBeginner==true)
+                if(model.isBeginner)
                     ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
 
             });

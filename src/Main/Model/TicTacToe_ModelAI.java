@@ -16,11 +16,13 @@ public class TicTacToe_ModelAI extends Game {
     public int row;
     public int column;
     public boolean isBeginner = false;
+    int level;
 
 
-    public TicTacToe_ModelAI(TicTacToe_View view) {
+    public TicTacToe_ModelAI(TicTacToe_View view, int level) {
         super();
         this.view = view;
+        this.level = level;
 
 
     }
@@ -41,7 +43,8 @@ public class TicTacToe_ModelAI extends Game {
 
         public void AIMove () {
 
-        //TOdo if(getLevel() == 1){
+
+        if (level == 1){
             Random random = new Random();
             int r = random.nextInt(4) + 1;
 
@@ -59,12 +62,12 @@ public class TicTacToe_ModelAI extends Game {
                 System.out.println("Computer moves to " + r);
             }
 
-        /* TODO }else if(controllerAI.getLevel() == 2){
+        }else if(level == 2){
             X_move(1,1);
 
-        }else if(controllerAI.getLevel() == 3){
+        }else if(level == 3){
             X_move(1,1);
-        }*/
+        }
 
 
         }
