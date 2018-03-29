@@ -1,11 +1,8 @@
-package Controller;
+package Main.Controller;
 
-import Model.TicTacToe_ModelAI;
-import Model.TicTacToe_ModelOffline;
-import Model.TicTacToe_ModelOnline;
-import View.TicTacToe_View;
+import Main.Model.TicTacToe_ModelOnline;
+import Main.View.TicTacToe_View;
 import javafx.scene.control.Menu;
-import javafx.stage.Stage;
 
 public class TicTacToe_ControllerOnline extends ChangeModus {
 

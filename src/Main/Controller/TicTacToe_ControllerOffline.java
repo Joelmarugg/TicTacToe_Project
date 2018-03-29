@@ -1,19 +1,20 @@
-package Controller;
+package Main.Controller;
 
-import Model.*;
-import View.TicTacToe_View;
+import Main.Model.*;
+import Main.View.TicTacToe_View;
 import javafx.scene.control.Menu;
-import javafx.stage.Stage;
 
 public class TicTacToe_ControllerOffline extends ChangeModus {
 
     TicTacToe_ModelOffline model;
     TicTacToe_View view;
 
+
     public TicTacToe_ControllerOffline(TicTacToe_ModelOffline model, TicTacToe_View view){
 
         this.model = model;
         this.view = view;
+
 
         DisableAllButtons(view);
 

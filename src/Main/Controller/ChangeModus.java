@@ -1,15 +1,15 @@
-package Controller;
+package Main.Controller;
 
-import Controller.TicTacToe_ControllerOnline;
-import Model.TicTacToe_ModelAI;
-import Model.TicTacToe_ModelOffline;
-import Model.TicTacToe_ModelOnline;
-import View.TicTacToe_View;
+import Main.Model.TicTacToe_ModelAI;
+import Main.Model.TicTacToe_ModelOffline;
+import Main.Model.TicTacToe_ModelOnline;
+import Main.View.TicTacToe_View;
 import javafx.stage.Stage;
 
 public class ChangeModus {
 
     TicTacToe_View view;
+    TicTacToe_ControllerAI controllerAI;
 
     public void ChangeToOnline(TicTacToe_View view){
 
@@ -37,10 +37,11 @@ public class ChangeModus {
 
         this.view = view;
 
+
         System.out.println("You changed the modus to AI, Easy");
         Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
         TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-        TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI();
+        TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI(view);
         TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI, newView, 1);
     }
 
@@ -48,10 +49,11 @@ public class ChangeModus {
 
         this.view = view;
 
+
         System.out.println("You changed the modus to AI, Medium");
         Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
         TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-        TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI();
+        TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI(view);
         TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI,newView,2);
     }
 
@@ -59,10 +61,11 @@ public class ChangeModus {
 
         this.view = view;
 
+
         System.out.println("You changed the modus to AI, Hard");
         Stage stageTheEventSourceNodeBelongs = (Stage) view.Btn1.getScene().getWindow();
         TicTacToe_View newView = new TicTacToe_View(stageTheEventSourceNodeBelongs);
-        TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI();
+        TicTacToe_ModelAI modelAI = new TicTacToe_ModelAI(view);
         TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI,newView,3);
     }
 

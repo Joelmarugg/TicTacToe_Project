@@ -1,13 +1,13 @@
-package Model;
+package Main.Model;
 
 public class Game {
 
     public static char[][] PlayBoard = new char[3][3];
     public int NumberOfMoves = 1;
 
-    public Game(){
 
-    }
+
+
     public void NewGame() {
 
         for (int i = 0; i < PlayBoard.length; i++) {
@@ -71,4 +71,6 @@ public class Game {
     public void ResetNumberOfMoves() {
         NumberOfMoves = 1;
     }
+
+
 }

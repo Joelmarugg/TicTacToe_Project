@@ -1,4 +1,4 @@
-package Model;
+package Main.Model;
 
 public class TicTacToe_ModelOnline extends Game{
 
