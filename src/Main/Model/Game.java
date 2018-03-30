@@ -51,12 +51,62 @@ public class Game {
         }
     }
 
+
+    public static char[] getNewBoard( ) {
+        char[] NewBoard = new char[9];
+        int count = 0;
+        for (int i = 0; i<3; i++) {
+            for (int j = 0; j<3; j++,count++) {
+                if (PlayBoard[i][j] == '-'){
+                    NewBoard[count] = '-';
+                }else if(PlayBoard[i][j] == 'X'){
+                    NewBoard[count] = 'X';
+                }else if(PlayBoard[i][j] == 'O') {
+                    NewBoard[count] = 'O';
+                }
+
+            }
+
+        }
+
+        return NewBoard;
+    }
+
     public boolean CheckTie(){
         if(NumberOfMoves >= 10 && !Evaluation.O_CheckForWinner() && !Evaluation.X_CheckForWinner()) {
             return true;
         }else {
             return false;
         }
+    }
+
+    public int minimax(char[] newPlayBoard, char player){
+
+
+        //checks how many spots are free
+        int count = 0;
+        for(int i = 0; i < getNewBoard().length; i++){
+            if( getNewBoard()[i] == '-'){
+                count++;
+            }
+        }
+        int SpotsAvailable = count;
+
+        //checks for end points
+        if(Evaluation.O_CheckForWinner()){
+            return -10;
+        }else if (Evaluation.X_CheckForWinner()){
+            return +10;
+        }else if (SpotsAvailable == 0){
+            return 0;
+        }
+
+
+
+
+
+
+        return 0;
     }
 
     public void IncreaseMoveNumber() {

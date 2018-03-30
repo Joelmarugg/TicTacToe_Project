@@ -66,7 +66,18 @@ public class TicTacToe_ModelAI extends Game {
             X_move(1,1);
 
         }else if(level == 3){
+
             X_move(1,1);
+
+
+
+
+
+
+
+
+
+
         }
 
 
