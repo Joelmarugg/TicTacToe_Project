@@ -1,5 +1,6 @@
 package Main.Model;
 
+import Main.Controller.ChangeModus;
 import Main.Controller.TicTacToe_ControllerAI;
 import Main.Main;
 import Main.View.TicTacToe_View;
@@ -17,6 +18,7 @@ public class TicTacToe_ModelAI extends Game {
     public int column;
     public boolean isBeginner = false;
     int level;
+
 
 
     public TicTacToe_ModelAI(TicTacToe_View view, int level) {
@@ -71,7 +73,7 @@ public class TicTacToe_ModelAI extends Game {
 
                 char [] board = getNewBoard();
 
-                int GoTo = minimax(board, player);
+                int num = minimax(board, player);
 
 
                 if (GoTo == 0) {
@@ -92,6 +94,15 @@ public class TicTacToe_ModelAI extends Game {
                     X_move(2, 1);
                 } else if (GoTo == 8) {
                     X_move(2, 2);
+                }
+                IncreaseMoveNumber();
+
+                if (Evaluation.X_CheckForWinner()){
+                    Winner = true;
+                    System.out.println("Player X winns");
+                }
+                if(CheckTie()){
+                 System.out.println("It's a tie... Of course... ;)");
                 }
 
             }

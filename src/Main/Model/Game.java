@@ -8,13 +8,20 @@ public class Game {
     public int NumberOfMoves = 1;
     public char player = 'X';
     public int depth = 0;
-
+    public int GoTo;
+    public boolean Winner = false;
 
     public int SpotsAvailable;
 
 
 
+
     public void NewGame() {
+
+      /* PlayBoard = new char[][] {{'O','-','X'},
+                                 {'X','-','X'},
+                                 {'-','O','O'}};*/
+        Winner = false;
 
         for (int i = 0; i < PlayBoard.length; i++) {
             for (int j = 0; j < PlayBoard[i].length; j++) {
@@ -91,6 +98,7 @@ public class Game {
     public int minimax(char[] newPlayBoard, char player){
 
 
+
         char AiPlayer = 'X';
         char HuPlayer = 'O';
         depth++;
@@ -114,7 +122,8 @@ public class Game {
             return 0;
         }
 
-        int[] moves = new int[9];
+        // create array to store values of the moves
+        int[] moves = new int[SpotsAvailable];
 
 
         int c = 0;
@@ -135,37 +144,60 @@ public class Game {
                     move += result;
                 }
                 newPlayBoard[i] = '-';
-                SpotsAvailable++;
+
 
                 moves[c] = move;
                 c++;
             }
         }
 
+        count=0;
+
+        for(int i = 0; i < getNewBoard().length; i++){
+            if( newPlayBoard[i] == '-'){
+                count++;
+            }
+        }
+        SpotsAvailable = count;
 
         int BestMove = 0;
 
+        //check for MAX
         if(player == AiPlayer){
             int BestScore = -10000;
             for(int i = 0; i < moves.length; i++){
                 if(moves[i] > BestScore){
                     BestScore = moves[i];
-                    BestMove = i;
+                    BestMove = BestScore;
                 }
             }
         }else {
+            //check for MIN
             int BestScore = 10000;
             for (int i = 0; i < moves.length; i++) {
                 if (moves[i] < BestScore) {
                     BestScore = moves[i];
-                    BestMove = i;
+                    BestMove = BestScore;
 
                 }
             }
         }
-        return EmptySpots(getNewBoard())[BestMove];
+        position_of(moves,BestMove,newPlayBoard);
+        return BestMove;
 
     }
+
+    public void position_of(int[] Moves, int bestMove, char [] NewPlayBoard) {
+        for (int i = 0; i < Moves.length; i++) {
+            if (Moves[i] == bestMove) {
+                GoTo = EmptySpots(NewPlayBoard)[i];
+                break;
+            }
+
+
+        }
+    }
+
 
     public int[] EmptySpots(char[] board){
 

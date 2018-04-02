@@ -143,12 +143,13 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 }
                 model.IncreaseMoveNumber();
                 view.Btn1.setDisable(true);
-                if (model.CheckTie()){
-                    System.out.println("its a tie.. no winner!");
-                };
                 System.out.println("you pressed button 1");
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
 
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
+                if(model.Winner){
+                    DisableAllButtons(view);
+                }
             });
 
             view.Btn2.setOnAction((event) -> {
@@ -161,12 +162,13 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 }
                 model.IncreaseMoveNumber();
                 view.Btn2.setDisable(true);
-                if (model.CheckTie()){
-                    System.out.println("its a tie.. no winner!");
-                };
                 System.out.println("you pressed button 2");
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
 
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
+                if(model.Winner){
+                    DisableAllButtons(view);
+                }
             });
 
             view.Btn3.setOnAction((event) -> {
@@ -179,12 +181,13 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 }
                 model.IncreaseMoveNumber();
                 view.Btn3.setDisable(true);
-                if (model.CheckTie()){
-                    System.out.println("its a tie.. no winner!");
-                };
                 System.out.println("you pressed button 3");
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
 
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
+                if(model.Winner){
+                    DisableAllButtons(view);
+                }
             });
 
             view.Btn4.setOnAction((event) -> {
@@ -197,12 +200,13 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 }
                 model.IncreaseMoveNumber();
                 view.Btn4.setDisable(true);
-                if (model.CheckTie()){
-                    System.out.println("its a tie.. no winner!");
-                };
                 System.out.println("you pressed button 4");
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
 
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
+                if(model.Winner){
+                    DisableAllButtons(view);
+                }
             });
 
             view.Btn5.setOnAction((event) -> {
@@ -215,12 +219,13 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 }
                 model.IncreaseMoveNumber();
                 view.Btn5.setDisable(true);
-                if (model.CheckTie()){
-                    System.out.println("its a tie.. no winner!");
-                };
                 System.out.println("you pressed button 5");
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
 
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
+                if(model.Winner){
+                    DisableAllButtons(view);
+                }
             });
 
             view.Btn6.setOnAction((event) -> {
@@ -233,12 +238,13 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 }
                 model.IncreaseMoveNumber();
                 view.Btn6.setDisable(true);
-                if (model.CheckTie()){
-                    System.out.println("its a tie.. no winner!");
-                };
                 System.out.println("you pressed button 6");
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
 
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
+                if(model.Winner){
+                    DisableAllButtons(view);
+                }
             });
 
             view.Btn7.setOnAction((event) -> {
@@ -251,12 +257,13 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 }
                 model.IncreaseMoveNumber();
                 view.Btn7.setDisable(true);
-                if (model.CheckTie()){
-                    System.out.println("its a tie.. no winner!");
-                };
                 System.out.println("you pressed button 7");
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
 
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
+                if(model.Winner){
+                    DisableAllButtons(view);
+                }
             });
 
             view.Btn8.setOnAction((event) -> {
@@ -269,12 +276,13 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 }
                 model.IncreaseMoveNumber();
                 view.Btn8.setDisable(true);
-                if (model.CheckTie()){
-                    System.out.println("its a tie.. no winner!");
-                };
                 System.out.println("you pressed button 8");
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
 
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
+                if(model.Winner){
+                    DisableAllButtons(view);
+                }
             });
 
             view.Btn9.setOnAction((event) -> {
@@ -287,11 +295,13 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 }
                 model.IncreaseMoveNumber();
                 view.Btn9.setDisable(true);
-                if (model.CheckTie()){
-                    System.out.println("its a tie.. no winner!");
-                };
                 System.out.println("you pressed button 9");
+
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
+                if(model.Winner){
+                    DisableAllButtons(view);
+                }
 
             });
 
@@ -301,8 +311,10 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 ResetTextOfButtons(view);
                 EnableAllButtons(view);
                 model.setBeginner();
-                if(model.isBeginner)
-                    ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setText("X");
+                    if(model.isBeginner) {
+                        ((Button) (model.getNodeByRowColumnIndex(model.row, model.column, view.GameGrid))).setText("X");
+                        ((Button) (model.getNodeByRowColumnIndex(model.row, model.column, view.GameGrid))).setDisable(true);
+                     }
 
             });
 

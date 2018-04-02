@@ -69,9 +69,9 @@ public class ChangeModus {
         TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI,newView,3);
     }
 
-    public void DisableAllButtons(TicTacToe_View view){
+    public static void DisableAllButtons(TicTacToe_View view){
 
-        this.view = view;
+        view = view;
 
         view.Btn1.setDisable(true); view.Btn4.setDisable(true); view.Btn7.setDisable(true);
         view.Btn2.setDisable(true); view.Btn5.setDisable(true); view.Btn8.setDisable(true);
