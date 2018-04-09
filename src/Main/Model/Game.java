@@ -10,7 +10,7 @@ public class Game {
     public int depth = 0;
     public int GoTo;
     public boolean Winner = false;
-
+    public int level;
     public int SpotsAvailable;
 
 
@@ -22,6 +22,7 @@ public class Game {
                                  {'X','-','X'},
                                  {'-','O','O'}};*/
         Winner = false;
+        depth = 0;
 
         for (int i = 0; i < PlayBoard.length; i++) {
             for (int j = 0; j < PlayBoard[i].length; j++) {
@@ -43,6 +44,7 @@ public class Game {
         PlayBoard[row][col] = 'X';
 
 
+
         for (char[] a : PlayBoard) {
             for (char i : a) {
                 System.out.print(i + "\t");
@@ -56,7 +58,7 @@ public class Game {
     public void O_move(int row, int col) {
 
         PlayBoard[row][col] = 'O';
-
+        depth = 0;
 
         for (char[] a : PlayBoard) {
             for (char i : a) {
@@ -101,8 +103,19 @@ public class Game {
 
         char AiPlayer = 'X';
         char HuPlayer = 'O';
-        depth++;
+        //depth++;
+        System.out.println("looking at depth " + depth);
 
+        //make it easier for other levels
+        if (level == 1){
+            if ( depth == 1){
+                return 0;
+            }
+        }else if (level == 2){
+            if (depth == 2){
+                return 0;
+            }
+        }
 
         //checks how many spots are free
         int count = 0;
@@ -115,10 +128,13 @@ public class Game {
 
         //checks for end points
         if(Evaluation.AI_CheckForWinner(newPlayBoard,HuPlayer)){
+            //depth--;
             return -10;
         }else if (Evaluation.AI_CheckForWinner(newPlayBoard,AiPlayer)){
+            //depth--;
             return +10;
         }else if (SpotsAvailable == 0){
+            //depth--;
             return 0;
         }
 
@@ -136,13 +152,22 @@ public class Game {
 
                 int move = 0;
 
+                depth++;
+                int result = minimax(newPlayBoard, player == AiPlayer ? HuPlayer:AiPlayer);
+                depth--;
+                move += result;
+
+                /*
                 if (player == AiPlayer) {
+                    depth++;
                     int result = minimax(newPlayBoard, HuPlayer);
                     move += result;
                 } else {
+                   depth++;
                     int result = minimax(newPlayBoard, AiPlayer);
                     move += result;
                 }
+                */
                 newPlayBoard[i] = '-';
 
 
@@ -182,6 +207,7 @@ public class Game {
                 }
             }
         }
+        //depth--;
         position_of(moves,BestMove,newPlayBoard);
         return BestMove;
 

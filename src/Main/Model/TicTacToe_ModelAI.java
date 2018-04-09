@@ -17,7 +17,7 @@ public class TicTacToe_ModelAI extends Game {
     public int row;
     public int column;
     public boolean isBeginner = false;
-    int level;
+
 
 
 
@@ -47,27 +47,76 @@ public class TicTacToe_ModelAI extends Game {
 
 
             if (level == 1) {
-                Random random = new Random();
-                int r = random.nextInt(4) + 1;
+                char [] board = getNewBoard();
 
-                if (r == 1) {
-                    X_move(2, 1);
-                    System.out.println("Computer moves to " + r);
-                } else if (r == 2) {
-                    X_move(2, 2);
-                    System.out.println("Computer moves to " + r);
-                } else if (r == 3) {
+                int num = minimax(board, player);
+
+
+                if (GoTo == 0) {
+                    X_move(0, 0);
+                } else if (GoTo == 1) {
+                    X_move(0, 1);
+                } else if (GoTo == 2) {
+                    X_move(0, 2);
+                } else if (GoTo == 3) {
+                    X_move(1, 0);
+                } else if (GoTo == 4) {
+                    X_move(1, 1);
+                } else if (GoTo == 5) {
+                    X_move(1, 2);
+                } else if (GoTo == 6) {
                     X_move(2, 0);
-                    System.out.println("Computer moves to " + r);
-                } else if (r == 4) {
+                } else if (GoTo == 7) {
+                    X_move(2, 1);
+                } else if (GoTo == 8) {
                     X_move(2, 2);
-                    System.out.println("Computer moves to " + r);
+                }
+                IncreaseMoveNumber();
+
+                if (Evaluation.X_CheckForWinner()){
+                    Winner = true;
+                    System.out.println("Player X winns");
+                }
+                if(CheckTie()){
+                    System.out.println("It's a tie... Of course... ;)");
                 }
 
             } else if (level == 2) {
-                X_move(1, 1);
+                char [] board = getNewBoard();
 
-            } else if (level == 3) {
+                int num = minimax(board, player);
+
+
+                if (GoTo == 0) {
+                    X_move(0, 0);
+                } else if (GoTo == 1) {
+                    X_move(0, 1);
+                } else if (GoTo == 2) {
+                    X_move(0, 2);
+                } else if (GoTo == 3) {
+                    X_move(1, 0);
+                } else if (GoTo == 4) {
+                    X_move(1, 1);
+                } else if (GoTo == 5) {
+                    X_move(1, 2);
+                } else if (GoTo == 6) {
+                    X_move(2, 0);
+                } else if (GoTo == 7) {
+                    X_move(2, 1);
+                } else if (GoTo == 8) {
+                    X_move(2, 2);
+                }
+                IncreaseMoveNumber();
+
+                if (Evaluation.X_CheckForWinner()){
+                    Winner = true;
+                    System.out.println("Player X winns");
+                }
+                if(CheckTie()){
+                    System.out.println("It's a tie... Of course... ;)");
+                }
+
+            }else if (level == 3) {
 
                 //char[] board = {'O', '-', 'X', 'X', '-', 'X', '-', 'O', 'O'};
 
@@ -118,12 +167,14 @@ public class TicTacToe_ModelAI extends Game {
                 NumberOfMoves = 2;//No
                 System.out.println("Computer's turn..");
                 isBeginner=true;
+                depth = 0;
 
                 AIMove();
             } else {
                 NumberOfMoves = 1;//Yes
                 System.out.println("Your turn..");
                 isBeginner=false;
+                depth = 1;
 
             }
             System.out.println(eingabe);

@@ -1,6 +1,5 @@
 package Main;
 
-import Main.Controller.TicTacToe_ControllerAI;
 import Main.Controller.TicTacToe_ControllerOffline;
 import Main.Model.TicTacToe_ModelOffline;
 import Main.View.TicTacToe_View;
@@ -29,7 +28,7 @@ public class Main extends Application{
 
 
          modelOffline = new TicTacToe_ModelOffline();
-         view = new TicTacToe_View(PrimaryStage);
+         view = new TicTacToe_View(PrimaryStage, "Grass.css");
          controllerOffline = new TicTacToe_ControllerOffline(modelOffline,view);
     }
 

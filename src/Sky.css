@@ -1,0 +1,88 @@
+.button{
+    -fx-background-color: linear-gradient(#bef0ff, #d6fffb);
+    -fx-background-size:stretch,auto;
+
+
+}
+.button:disabled{
+    -fx-opacity: 1.0 ;
+}
+.button:hover{
+    -fx-background-color: #d6fffb;
+}
+#New_Game_Button{
+    -fx-background-color: linear-gradient(#bef0ff,#98f5ff),
+    radial-gradient(center 50% -40%, radius 200%,  #d6fffb 45%, #afffee 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 5, 0.0, 0, 1);
+    -fx-text-fill: #395306;
+    -fx-font-size: 20;
+}
+#New_Game_Button:hover {
+    -fx-background-color: linear-gradient(#d6fffb,#afffee ),
+    radial-gradient(center 50% -40%, radius 200%, #bef0ff 45%, #98f5ff 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 5, 0.0, 0, 1);
+    -fx-text-fill: #395306;
+    -fx-font-size: 20;
+}
+#Play_Btn {
+    -fx-background-color: linear-gradient(#bef0ff,#98f5ff),
+    radial-gradient(center 50% -40%, radius 200%,  #d6fffb 45%, #afffee 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 5, 0.0, 0, 1);
+    -fx-text-fill: #395306;
+    -fx-font-size: 20;
+}
+#Play_Btn:hover {
+    -fx-background-color: linear-gradient(#d6fffb,#afffee ),
+    radial-gradient(center 50% -40%, radius 200%, #bef0ff 45%, #98f5ff 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 5, 0.0, 0, 1);
+    -fx-text-fill: #395306;
+    -fx-font-size: 20;
+}
+
+#RightLabel_Box{
+
+    -fx-alignment: center;
+    -fx-background-color: linear-gradient(#d6fffb 0%, #bef0ff 50%, #d6fffb 100%);
+}
+#LeftLabel_Box{
+
+    -fx-alignment: center;
+    -fx-background-color: linear-gradient(#d6fffb 0%, #bef0ff 50%, #d6fffb 100%);
+
+}
+#LeftLabel{
+    -fx-rotate: -90;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
+#RightLabel{
+    -fx-rotate: 90;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
+#ControlArea{
+    -fx-background-color: linear-gradient(#d6fffb 0%, #bef0ff 50%, #d6fffb 100%);
+}
+#MenuBar{
+    -fx-background-color: linear-gradient(#d6fffb 0%, #bef0ff 50%, #d6fffb 100%);
+    -fx-border-color: lightblue;
+    -fx-font-size: 15;
+}
+.menu:hover{
+    -fx-background-color: blue;
+}
+.menu:showing{
+    -fx-background-color: blue;
+}
+
+.menu-item:focused{
+    -fx-background-color: blue;
+}
