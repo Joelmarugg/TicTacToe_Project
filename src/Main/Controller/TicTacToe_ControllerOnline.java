@@ -13,7 +13,7 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
 
         this.model = model;
         this.view = view;
-        ChangeModus c = new ChangeModus();
+
 
         ((Menu) (view.OptionsMenu.getItems().get(0))).getItems().get(0).setOnAction((event) -> {
             //change theme to "Sky"

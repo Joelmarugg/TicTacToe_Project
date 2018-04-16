@@ -12,7 +12,7 @@ public class ChangeModus {
 
     TicTacToe_View view;
     TicTacToe_ControllerAI controllerAI;
-    static public String currentSheet;
+    static public String currentSheet ="Grass.css";
 
 
 

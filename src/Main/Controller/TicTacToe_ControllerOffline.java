@@ -4,6 +4,9 @@ import Main.Model.*;
 import Main.View.TicTacToe_View;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
+import javafx.stage.Stage;
+
+import java.util.List;
 
 public class TicTacToe_ControllerOffline extends ChangeModus{
 

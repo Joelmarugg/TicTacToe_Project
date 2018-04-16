@@ -112,7 +112,7 @@ public class Game {
                 return 0;
             }
         }else if (level == 2){
-            if (depth == 2){
+            if (depth == 3){
                 return 0;
             }
         }
@@ -128,13 +128,13 @@ public class Game {
 
         //checks for end points
         if(Evaluation.AI_CheckForWinner(newPlayBoard,HuPlayer)){
-            //depth--;
+
             return -10;
         }else if (Evaluation.AI_CheckForWinner(newPlayBoard,AiPlayer)){
-            //depth--;
+
             return +10;
         }else if (SpotsAvailable == 0){
-            //depth--;
+
             return 0;
         }
 
@@ -146,9 +146,8 @@ public class Game {
         for (int i = 0; i < getNewBoard().length; i++) {
 
             if (newPlayBoard[i] == '-') {
-                //System.out.println("trying at pos. " + (EmptySpots(newPlayBoard)[0]) + " at the depth of " + depth);
-                newPlayBoard[i] = (char) player;
 
+                newPlayBoard[i] = (char) player;
 
                 int move = 0;
 
@@ -207,7 +206,7 @@ public class Game {
                 }
             }
         }
-        //depth--;
+
         position_of(moves,BestMove,newPlayBoard);
         return BestMove;
 
