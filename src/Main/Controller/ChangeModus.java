@@ -168,9 +168,9 @@ public class ChangeModus {
 
     public void OwinnerEffect(Button btn1, Button btn2, Button btn3){
 
-        timeline1 = new Timeline(new KeyFrame(Duration.seconds(0.5), evt -> btn1.setStyle("-fx-background-image: empty;" )),
-                new KeyFrame(Duration.seconds(0.5), evt -> btn2.setStyle("-fx-background-image: empty;" )),
-                new KeyFrame(Duration.seconds(0.5), evt -> btn3.setStyle("-fx-background-image: empty;" )),
+        timeline1 = new Timeline(new KeyFrame(Duration.seconds(0.5), evt -> btn1.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
+                new KeyFrame(Duration.seconds(0.5), evt -> btn2.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
+                new KeyFrame(Duration.seconds(0.5), evt -> btn3.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
                 new KeyFrame(Duration.seconds(1), evt -> btn1.setStyle("-fx-background-image: url('Main/Stuff/O.png');" )),
                 new KeyFrame(Duration.seconds(1), evt -> btn2.setStyle("-fx-background-image: url('Main/Stuff/O.png');" )),
                 new KeyFrame(Duration.seconds(1), evt -> btn3.setStyle("-fx-background-image: url('Main/Stuff/O.png');")));
@@ -186,9 +186,9 @@ public class ChangeModus {
 
     public void XwinnerEffect(Button btn1, Button btn2, Button btn3){
 
-        timeline1 = new Timeline(new KeyFrame(Duration.seconds(0.5), evt -> btn1.setStyle("-fx-background-image: empty;" )),
-                new KeyFrame(Duration.seconds(0.5), evt -> btn2.setStyle("-fx-background-image: empty;" )),
-                new KeyFrame(Duration.seconds(0.5), evt -> btn3.setStyle("-fx-background-image: empty;" )),
+        timeline1 = new Timeline(new KeyFrame(Duration.seconds(0.5), evt -> btn1.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
+                new KeyFrame(Duration.seconds(0.5), evt -> btn2.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
+                new KeyFrame(Duration.seconds(0.5), evt -> btn3.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
                 new KeyFrame(Duration.seconds(1), evt -> btn1.setStyle("-fx-background-image: url('Main/Stuff/X.png');" )),
                 new KeyFrame(Duration.seconds(1), evt -> btn2.setStyle("-fx-background-image: url('Main/Stuff/X.png');" )),
                 new KeyFrame(Duration.seconds(1), evt -> btn3.setStyle("-fx-background-image: url('Main/Stuff/X.png');")));

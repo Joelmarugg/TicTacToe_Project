@@ -75,20 +75,33 @@ public class Evaluation extends Game {
     }
 
     public static boolean AI_CheckForWinner(char[] board, char player){
-        if (//Todo set winnerline here!!
-                (board[0] == player && board[1] == player && board[2] == player) ||
-                        (board[3] == player && board[4] == player && board[5] == player) ||
-                        (board[6] == player && board[7] == player && board[8] == player) ||
-                        (board[0] == player && board[3] == player && board[6] == player) ||
-                        (board[1] == player && board[4] == player && board[7] == player) ||
-                        (board[2] == player && board[5] == player && board[8] == player) ||
-                        (board[0] == player && board[4] == player && board[8] == player) ||
-                        (board[2] == player && board[4] == player && board[6] == player)
-                ) {
+
+        if (board[0] == player && board[1] == player && board[2] == player) {
+            setWinnerLine(1);
             return true;
-        } else {
+        } else if (board[3] == player && board[4] == player && board[5] == player) {
+            setWinnerLine(2);
+            return true;
+        } else if (board[6] == player && board[7] == player && board[8] == player) {
+            setWinnerLine(3);
+            return true;
+        } else if (board[0] == player && board[3] == player && board[6] == player) {
+            setWinnerLine(4);
+            return true;
+        } else if (board[1] == player && board[4] == player && board[7] == player) {
+            setWinnerLine(5);
+            return true;
+        } else if (board[2] == player && board[5] == player && board[8] == player) {
+            setWinnerLine(6);
+            return true;
+        } else if (board[0] == player && board[4] == player && board[8] == player) {
+            setWinnerLine(7);
+            return true;
+        } else if (board[2] == player && board[4] == player && board[6] == player) {
+            setWinnerLine(8);
+            return true;
+        } else
             return false;
-        }
     }
 }
 
