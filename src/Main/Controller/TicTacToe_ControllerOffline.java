@@ -70,6 +70,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
             model.NewGame();
             model.ResetNumberOfMoves();
             ResetTextOfButtons(view);
+            stopAnimation();
             ResetImageOfButtons(view);
             EnableAllButtons(view);
             System.out.println("you started a new game");
@@ -78,7 +79,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
         view.Btn1.setOnAction((event) -> {
 
             if (model.getNumberOfMoves() % 2 == 0) {
-                view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(0,0);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -86,7 +87,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
                     System.out.println("Player O winns");
                 }
             }else{
-                view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 model.X_move(0,0);
                 if (Evaluation.X_CheckForWinner()){
                     DisableAllButtons(view);
@@ -106,14 +107,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
         view.Btn2.setOnAction((event) -> {
 
             if (model.getNumberOfMoves() % 2 == 0) {
-                view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(0,1);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
-                view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 model.X_move(0,1);
                 if (Evaluation.X_CheckForWinner()){
                     DisableAllButtons(view);
@@ -130,14 +131,31 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
 
         view.Btn3.setOnAction((event) -> {
             if (model.getNumberOfMoves() % 2 == 0) {
-                view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(0,2);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
+                    if (Evaluation.getWinnerLine() == 1){
+                        OwinnerEffect(view.Btn1, view.Btn2, view.Btn3);
+                    } else if (Evaluation.getWinnerLine() == 2){
+                        OwinnerEffect(view.Btn4, view.Btn5, view.Btn6);
+                    }else if (Evaluation.getWinnerLine() == 3){
+                        OwinnerEffect(view.Btn7, view.Btn8, view.Btn9);
+                    }else if (Evaluation.getWinnerLine() == 4){
+                        OwinnerEffect(view.Btn1, view.Btn4, view.Btn7);
+                    }else if (Evaluation.getWinnerLine() == 5){
+                        OwinnerEffect(view.Btn2, view.Btn5, view.Btn8);
+                    }else if (Evaluation.getWinnerLine() == 6){
+                        OwinnerEffect(view.Btn3, view.Btn6, view.Btn9);
+                    }else if (Evaluation.getWinnerLine() == 7){
+                        OwinnerEffect(view.Btn1, view.Btn5, view.Btn9);
+                    }else if (Evaluation.getWinnerLine() == 8){
+                        OwinnerEffect(view.Btn7, view.Btn5, view.Btn3);
+                    }
                     System.out.println("Player O winns");
                 }
             }else{
-                view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 model.X_move(0,2);
                 if (Evaluation.X_CheckForWinner()){
                     DisableAllButtons(view);
@@ -154,14 +172,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
 
         view.Btn4.setOnAction((event) -> {
             if (model.getNumberOfMoves() % 2 == 0) {
-                view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(1,0);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
-                view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");;
+                view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/X.png')");;
                 model.X_move(1,0);
                 if (Evaluation.X_CheckForWinner()){
                     DisableAllButtons(view);
@@ -178,14 +196,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
 
         view.Btn5.setOnAction((event) -> {
             if (model.getNumberOfMoves() % 2 == 0) {
-                view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(1,1);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
-                view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 model.X_move(1,1);
                 if (Evaluation.X_CheckForWinner()){
                     DisableAllButtons(view);
@@ -202,14 +220,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
 
         view.Btn6.setOnAction((event) -> {
             if (model.getNumberOfMoves() % 2 == 0) {
-                view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(1,2);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
-                view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 model.X_move(1,2);
                 if (Evaluation.X_CheckForWinner()){
                     DisableAllButtons(view);
@@ -226,14 +244,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
 
         view.Btn7.setOnAction((event) -> {
             if (model.getNumberOfMoves() % 2 == 0) {
-                view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(2,0);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
-                view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 model.X_move(2,0);
                 if (Evaluation.X_CheckForWinner()){
                     DisableAllButtons(view);
@@ -250,14 +268,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
 
         view.Btn8.setOnAction((event) -> {
             if (model.getNumberOfMoves() % 2 == 0) {
-                view.Btn8.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn8.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(2,1);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
-                view.Btn8.setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                view.Btn8.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 model.X_move(2,1);
                 if (Evaluation.X_CheckForWinner()){
                     DisableAllButtons(view);
@@ -274,14 +292,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
 
         view.Btn9.setOnAction((event) -> {
             if (model.getNumberOfMoves() % 2 == 0) {
-                view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(2,2);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
                     System.out.println("Player O winns");
                 }
             }else{
-                view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 model.X_move(2,2);
                 if (Evaluation.X_CheckForWinner()){
                     DisableAllButtons(view);

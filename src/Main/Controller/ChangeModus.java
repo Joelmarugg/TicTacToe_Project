@@ -4,8 +4,15 @@ import Main.Model.TicTacToe_ModelAI;
 import Main.Model.TicTacToe_ModelOffline;
 import Main.Model.TicTacToe_ModelOnline;
 import Main.View.TicTacToe_View;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import java.awt.*;
 
 
 public class ChangeModus {
@@ -13,6 +20,14 @@ public class ChangeModus {
     TicTacToe_View view;
     TicTacToe_ControllerAI controllerAI;
     static public String currentSheet ="Grass.css";
+    public Button b1 = null;
+    public Button b2 = null;
+    public Button b3 = null;
+    public Timeline timeline1;
+public boolean start = false;
+
+
+
 
 
 
@@ -139,6 +154,39 @@ public class ChangeModus {
 
 
         ChangeModus.currentSheet =s;
+    }
+
+
+
+
+
+
+    public void OwinnerEffect(Button btn1, Button btn2, Button btn3){
+
+        timeline1 = new Timeline(new KeyFrame(Duration.seconds(0.5), evt -> btn1.setStyle("-fx-background-image: empty;" )),
+                new KeyFrame(Duration.seconds(0.5), evt -> btn2.setStyle("-fx-background-image: empty;" )),
+                new KeyFrame(Duration.seconds(0.5), evt -> btn3.setStyle("-fx-background-image: empty;" )),
+                new KeyFrame(Duration.seconds(1), evt -> btn1.setStyle("-fx-background-image: url('Main/Stuff/O.png');" )),
+                new KeyFrame(Duration.seconds(1), evt -> btn2.setStyle("-fx-background-image: url('Main/Stuff/O.png');" )),
+                new KeyFrame(Duration.seconds(1), evt -> btn3.setStyle("-fx-background-image: url('Main/Stuff/O.png');")));
+
+
+
+        timeline1.setCycleCount(Animation.INDEFINITE);
+        timeline1.play();
+        start=true;
+
+    }
+    public void stopAnimation(){
+        if(start)
+        timeline1.stop();
+        start = false;
+    }
+
+    public void XwinnerEffect(TicTacToe_View view){
+
+
+
     }
 
 }

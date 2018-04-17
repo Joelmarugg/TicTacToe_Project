@@ -64,7 +64,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn1.setOnAction((event) -> {
 
-                view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(0,0);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -74,7 +74,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn1.setDisable(true);
                 System.out.println("you pressed button 1");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -83,7 +83,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn2.setOnAction((event) -> {
 
-                view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(0,1);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -93,7 +93,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn2.setDisable(true);
                 System.out.println("you pressed button 2");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -102,7 +102,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn3.setOnAction((event) -> {
 
-                view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(0,2);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -112,7 +112,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn3.setDisable(true);
                 System.out.println("you pressed button 3");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -121,7 +121,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn4.setOnAction((event) -> {
 
-                view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(1,0);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -131,7 +131,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn4.setDisable(true);
                 System.out.println("you pressed button 4");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -140,7 +140,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn5.setOnAction((event) -> {
 
-                view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(1,1);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -150,7 +150,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn5.setDisable(true);
                 System.out.println("you pressed button 5");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -159,7 +159,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn6.setOnAction((event) -> {
 
-                view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(1,2);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -169,7 +169,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn6.setDisable(true);
                 System.out.println("you pressed button 6");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -178,7 +178,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn7.setOnAction((event) -> {
 
-                view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(2,0);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -188,7 +188,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn7.setDisable(true);
                 System.out.println("you pressed button 7");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -197,7 +197,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn8.setOnAction((event) -> {
 
-                view.Btn8.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn8.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(2,1);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -207,7 +207,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn8.setDisable(true);
                 System.out.println("you pressed button 8");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -216,7 +216,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn9.setOnAction((event) -> {
 
-                view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(2,2);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -226,7 +226,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn9.setDisable(true);
                 System.out.println("you pressed button 9");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -242,7 +242,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 EnableAllButtons(view);
                 model.setBeginner();
                 if(model.isBeginner) {
-                    ((Button) (model.getNodeByRowColumnIndex(model.row, model.column, view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                    ((Button) (model.getNodeByRowColumnIndex(model.row, model.column, view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                     ((Button) (model.getNodeByRowColumnIndex(model.row, model.column, view.GameGrid))).setDisable(true);
                 }
 
@@ -282,7 +282,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn1.setOnAction((event) -> {
 
-                view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(0,0);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -292,7 +292,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn1.setDisable(true);
                 System.out.println("you pressed button 1");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -301,7 +301,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn2.setOnAction((event) -> {
 
-                view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(0,1);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -311,7 +311,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn2.setDisable(true);
                 System.out.println("you pressed button 2");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -320,7 +320,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn3.setOnAction((event) -> {
 
-                view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(0,2);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -330,7 +330,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn3.setDisable(true);
                 System.out.println("you pressed button 3");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -339,7 +339,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn4.setOnAction((event) -> {
 
-                view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(1,0);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -349,7 +349,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn4.setDisable(true);
                 System.out.println("you pressed button 4");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -358,7 +358,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn5.setOnAction((event) -> {
 
-                view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(1,1);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -368,7 +368,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn5.setDisable(true);
                 System.out.println("you pressed button 5");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -377,7 +377,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn6.setOnAction((event) -> {
 
-                view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(1,2);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -387,7 +387,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn6.setDisable(true);
                 System.out.println("you pressed button 6");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -396,7 +396,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn7.setOnAction((event) -> {
 
-                view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(2,0);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -406,7 +406,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn7.setDisable(true);
                 System.out.println("you pressed button 7");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -415,7 +415,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn8.setOnAction((event) -> {
 
-                view.Btn8.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn8.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(2,1);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -425,7 +425,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn8.setDisable(true);
                 System.out.println("you pressed button 8");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -434,7 +434,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn9.setOnAction((event) -> {
 
-                view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(2,2);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -444,7 +444,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn9.setDisable(true);
                 System.out.println("you pressed button 9");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -460,7 +460,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 EnableAllButtons(view);
                 model.setBeginner();
                 if(model.isBeginner) {
-                    ((Button) (model.getNodeByRowColumnIndex(model.row, model.column, view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                    ((Button) (model.getNodeByRowColumnIndex(model.row, model.column, view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                     ((Button) (model.getNodeByRowColumnIndex(model.row, model.column, view.GameGrid))).setDisable(true);
                 }
 
@@ -501,7 +501,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn1.setOnAction((event) -> {
 
-                view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(0,0);
                 if (Evaluation.O_CheckForWinner()){
                      DisableAllButtons(view);
@@ -511,7 +511,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn1.setDisable(true);
                 System.out.println("you pressed button 1");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -520,7 +520,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn2.setOnAction((event) -> {
 
-                view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(0,1);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -530,7 +530,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn2.setDisable(true);
                 System.out.println("you pressed button 2");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -539,7 +539,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn3.setOnAction((event) -> {
 
-                view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(0,2);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -549,7 +549,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn3.setDisable(true);
                 System.out.println("you pressed button 3");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -558,7 +558,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn4.setOnAction((event) -> {
 
-                view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(1,0);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -568,7 +568,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn4.setDisable(true);
                 System.out.println("you pressed button 4");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -577,7 +577,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn5.setOnAction((event) -> {
 
-                view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(1,1);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -587,7 +587,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn5.setDisable(true);
                 System.out.println("you pressed button 5");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -596,7 +596,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn6.setOnAction((event) -> {
 
-                view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(1,2);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -606,7 +606,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn6.setDisable(true);
                 System.out.println("you pressed button 6");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -615,7 +615,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn7.setOnAction((event) -> {
 
-                view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(2,0);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -625,7 +625,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn7.setDisable(true);
                 System.out.println("you pressed button 7");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -634,7 +634,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn8.setOnAction((event) -> {
 
-                view.Btn8.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn8.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(2,1);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -644,7 +644,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn8.setDisable(true);
                 System.out.println("you pressed button 8");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -653,7 +653,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
             view.Btn9.setOnAction((event) -> {
 
-                view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/blackO.png')");
+                view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 model.O_move(2,2);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
@@ -663,7 +663,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 view.Btn9.setDisable(true);
                 System.out.println("you pressed button 9");
 
-                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
@@ -679,7 +679,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 EnableAllButtons(view);
                 model.setBeginner();
                     if(model.isBeginner) {
-                        ((Button) (model.getNodeByRowColumnIndex(model.row, model.column, view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/blackX.png')");
+                        ((Button) (model.getNodeByRowColumnIndex(model.row, model.column, view.GameGrid))).setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                         ((Button) (model.getNodeByRowColumnIndex(model.row, model.column, view.GameGrid))).setDisable(true);
                      }
 
