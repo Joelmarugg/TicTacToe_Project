@@ -505,6 +505,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 model.O_move(0,0);
                 if (Evaluation.O_CheckForWinner()){
                      DisableAllButtons(view);
+                     startOAnimation();
                      System.out.println("Player O winns");
                 }
                 model.IncreaseMoveNumber();
@@ -515,6 +516,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
+                    startXAnimation();
                 }
             });
 
@@ -524,6 +526,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 model.O_move(0,1);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
+                    startOAnimation();
                     System.out.println("Player O winns");
                 }
                 model.IncreaseMoveNumber();
@@ -534,6 +537,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
+                    startXAnimation();
                 }
             });
 
@@ -543,6 +547,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 model.O_move(0,2);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
+                    startOAnimation();
                     System.out.println("Player O winns");
                 }
                 model.IncreaseMoveNumber();
@@ -553,6 +558,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
+                    startXAnimation();
                 }
             });
 
@@ -619,6 +625,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 model.O_move(2,0);
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
+                    startOAnimation();
                     System.out.println("Player O winns");
                 }
                 model.IncreaseMoveNumber();
@@ -629,6 +636,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
                 ((Button)(model.getNodeByRowColumnIndex(model.row,model.column,view.GameGrid))).setDisable(true);
                 if(model.Winner){
                     DisableAllButtons(view);
+                    startXAnimation();
                 }
             });
 

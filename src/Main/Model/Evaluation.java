@@ -75,7 +75,7 @@ public class Evaluation extends Game {
     }
 
     public static boolean AI_CheckForWinner(char[] board, char player){
-        if (
+        if (//Todo set winnerline here!!
                 (board[0] == player && board[1] == player && board[2] == player) ||
                         (board[3] == player && board[4] == player && board[5] == player) ||
                         (board[6] == player && board[7] == player && board[8] == player) ||

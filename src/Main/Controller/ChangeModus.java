@@ -1,5 +1,6 @@
 package Main.Controller;
 
+import Main.Model.Evaluation;
 import Main.Model.TicTacToe_ModelAI;
 import Main.Model.TicTacToe_ModelOffline;
 import Main.Model.TicTacToe_ModelOnline;
@@ -24,7 +25,8 @@ public class ChangeModus {
     public Button b2 = null;
     public Button b3 = null;
     public Timeline timeline1;
-public boolean start = false;
+    public boolean start = false;
+    public boolean first = true;
 
 
 
@@ -136,15 +138,18 @@ public boolean start = false;
     }
 
     public void ResetImageOfButtons(TicTacToe_View view) {
-        view.Btn1.setStyle("-fx-background-image: empty");
-        view.Btn4.setStyle("-fx-background-image: empty");
-        view.Btn7.setStyle("-fx-background-image: empty");
-        view.Btn2.setStyle("-fx-background-image: empty");
-        view.Btn5.setStyle("-fx-background-image: empty");
-        view.Btn8.setStyle("-fx-background-image: empty");
-        view.Btn3.setStyle("-fx-background-image: empty");
-        view.Btn6.setStyle("-fx-background-image: empty");
-        view.Btn9.setStyle("-fx-background-image: empty");
+
+
+           view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/transparent.png')");
+           view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/transparent.png')");
+           view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/transparent.png')");
+           view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/transparent.png')");
+           view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/transparent.png')");
+           view.Btn8.setStyle("-fx-background-image: url('Main/Stuff/transparent.png')");
+           view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/transparent.png')");
+           view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/transparent.png')");
+           view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/transparent.png')");
+
     }
 
 
@@ -177,16 +182,69 @@ public boolean start = false;
         start=true;
 
     }
+
+
+    public void XwinnerEffect(Button btn1, Button btn2, Button btn3){
+
+        timeline1 = new Timeline(new KeyFrame(Duration.seconds(0.5), evt -> btn1.setStyle("-fx-background-image: empty;" )),
+                new KeyFrame(Duration.seconds(0.5), evt -> btn2.setStyle("-fx-background-image: empty;" )),
+                new KeyFrame(Duration.seconds(0.5), evt -> btn3.setStyle("-fx-background-image: empty;" )),
+                new KeyFrame(Duration.seconds(1), evt -> btn1.setStyle("-fx-background-image: url('Main/Stuff/X.png');" )),
+                new KeyFrame(Duration.seconds(1), evt -> btn2.setStyle("-fx-background-image: url('Main/Stuff/X.png');" )),
+                new KeyFrame(Duration.seconds(1), evt -> btn3.setStyle("-fx-background-image: url('Main/Stuff/X.png');")));
+
+
+
+        timeline1.setCycleCount(Animation.INDEFINITE);
+        timeline1.play();
+        start=true;
+
+    }
+
     public void stopAnimation(){
         if(start)
-        timeline1.stop();
+            timeline1.stop();
         start = false;
     }
 
-    public void XwinnerEffect(TicTacToe_View view){
+    public void startOAnimation() {
+        if (Evaluation.getWinnerLine() == 1) {
+            OwinnerEffect(view.Btn1, view.Btn2, view.Btn3);
+        } else if (Evaluation.getWinnerLine() == 2) {
+            OwinnerEffect(view.Btn4, view.Btn5, view.Btn6);
+        } else if (Evaluation.getWinnerLine() == 3) {
+            OwinnerEffect(view.Btn7, view.Btn8, view.Btn9);
+        } else if (Evaluation.getWinnerLine() == 4) {
+            OwinnerEffect(view.Btn1, view.Btn4, view.Btn7);
+        } else if (Evaluation.getWinnerLine() == 5) {
+            OwinnerEffect(view.Btn2, view.Btn5, view.Btn8);
+        } else if (Evaluation.getWinnerLine() == 6) {
+            OwinnerEffect(view.Btn3, view.Btn6, view.Btn9);
+        } else if (Evaluation.getWinnerLine() == 7) {
+            OwinnerEffect(view.Btn1, view.Btn5, view.Btn9);
+        } else if (Evaluation.getWinnerLine() == 8) {
+            OwinnerEffect(view.Btn7, view.Btn5, view.Btn3);
+        }
+    }
 
-
-
+    public void startXAnimation() {
+        if (Evaluation.getWinnerLine() == 1) {
+            XwinnerEffect(view.Btn1, view.Btn2, view.Btn3);
+        } else if (Evaluation.getWinnerLine() == 2) {
+            XwinnerEffect(view.Btn4, view.Btn5, view.Btn6);
+        } else if (Evaluation.getWinnerLine() == 3) {
+            XwinnerEffect(view.Btn7, view.Btn8, view.Btn9);
+        } else if (Evaluation.getWinnerLine() == 4) {
+            XwinnerEffect(view.Btn1, view.Btn4, view.Btn7);
+        } else if (Evaluation.getWinnerLine() == 5) {
+            XwinnerEffect(view.Btn2, view.Btn5, view.Btn8);
+        } else if (Evaluation.getWinnerLine() == 6) {
+            XwinnerEffect(view.Btn3, view.Btn6, view.Btn9);
+        } else if (Evaluation.getWinnerLine() == 7) {
+            XwinnerEffect(view.Btn1, view.Btn5, view.Btn9);
+        } else if (Evaluation.getWinnerLine() == 8) {
+            XwinnerEffect(view.Btn7, view.Btn5, view.Btn3);
+        }
     }
 
 }
