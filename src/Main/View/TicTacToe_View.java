@@ -15,21 +15,14 @@ public class TicTacToe_View {
      public boolean Online_1v1 = false;
      public boolean Offline_1v1 = true;
      public boolean AI = false;
-     public Button Btn1; public Button Btn2; public Button Btn3;
-     public Button Btn4; public Button Btn5; public Button Btn6;
-     public Button Btn7; public Button Btn8; public Button Btn9;
-     public Button New_Game_Btn;
-     public Button Exit_Btn;
+     public Button Btn1,Btn2,Btn3,Btn4,Btn5,Btn6,Btn7,Btn8,Btn9;
+     public Button New_Game_Btn,Exit_Btn;
      public GridPane GameGrid;
-     public Menu ModusMenu;
+     public Menu ModusMenu,OptionsMenu,HelpMenu;
      public Scene scene;
-     public Menu OptionsMenu;
-     public Menu HelpMenu;
-     private VBox RightLabel_Box;
-     private VBox LeftLabel_Box;
+     private VBox RightLabel_Box,LeftLabel_Box;
+     public Label LeftLabel,RightLabel;
      public BorderPane root;
-     public Label LeftLabel;
-
 
 
     public TicTacToe_View(Stage PrimaryStage, String style){
@@ -155,7 +148,7 @@ public class TicTacToe_View {
         //Right side
         RightLabel_Box = new VBox();
         RightLabel_Box.setId("RightLabel_Box");
-        Label RightLabel = new Label();
+        RightLabel = new Label();
         RightLabel.setText("Player O");
         RightLabel.setId("RightLabel");
         RightLabel_Box.getChildren().add(RightLabel);

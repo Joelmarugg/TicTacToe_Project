@@ -168,12 +168,17 @@ public class ChangeModus {
 
     private void OwinnerEffect(Button btn1, Button btn2, Button btn3){
 
+        String RightLabelText = view.RightLabel.getText();
+
+
         timeline1 = new Timeline(new KeyFrame(Duration.seconds(0.5), evt -> btn1.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
                 new KeyFrame(Duration.seconds(0.5), evt -> btn2.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
                 new KeyFrame(Duration.seconds(0.5), evt -> btn3.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
+                new KeyFrame(Duration.seconds(0.5), evt -> view.RightLabel.setText(RightLabelText) ),
                 new KeyFrame(Duration.seconds(1), evt -> btn1.setStyle("-fx-background-image: url('Main/Stuff/O.png');" )),
                 new KeyFrame(Duration.seconds(1), evt -> btn2.setStyle("-fx-background-image: url('Main/Stuff/O.png');" )),
-                new KeyFrame(Duration.seconds(1), evt -> btn3.setStyle("-fx-background-image: url('Main/Stuff/O.png');")));
+                new KeyFrame(Duration.seconds(1), evt -> btn3.setStyle("-fx-background-image: url('Main/Stuff/O.png');")),
+                new KeyFrame(Duration.seconds(1), evt -> view.RightLabel.setText("Winner!")));
 
 
 
@@ -186,12 +191,16 @@ public class ChangeModus {
 
     private void XwinnerEffect(Button btn1, Button btn2, Button btn3){
 
+        String LeftLabelText = view.LeftLabel.getText();
+
         timeline1 = new Timeline(new KeyFrame(Duration.seconds(0.5), evt -> btn1.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
                 new KeyFrame(Duration.seconds(0.5), evt -> btn2.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
                 new KeyFrame(Duration.seconds(0.5), evt -> btn3.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
+                new KeyFrame(Duration.seconds(0.5), evt -> view.LeftLabel.setText(LeftLabelText) ),
                 new KeyFrame(Duration.seconds(1), evt -> btn1.setStyle("-fx-background-image: url('Main/Stuff/X.png');" )),
                 new KeyFrame(Duration.seconds(1), evt -> btn2.setStyle("-fx-background-image: url('Main/Stuff/X.png');" )),
-                new KeyFrame(Duration.seconds(1), evt -> btn3.setStyle("-fx-background-image: url('Main/Stuff/X.png');")));
+                new KeyFrame(Duration.seconds(1), evt -> btn3.setStyle("-fx-background-image: url('Main/Stuff/X.png');")),
+                new KeyFrame(Duration.seconds(1), evt -> view.LeftLabel.setText("Winner!")));
 
 
 

@@ -10,10 +10,9 @@ public class Main extends Application{
 
 
 
-    TicTacToe_ModelOffline modelOffline;
-    TicTacToe_View view;
-    TicTacToe_ControllerOffline controllerOffline;
-
+    private TicTacToe_ModelOffline modelOffline;
+    private TicTacToe_View view;
+    private TicTacToe_ControllerOffline controllerOffline;
 
 
 
