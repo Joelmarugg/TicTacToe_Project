@@ -21,8 +21,6 @@ public class TicTacToe_ModelAI extends Game {
         super();
         this.view = view;
         this.level = level;
-
-
     }
 
         @Override

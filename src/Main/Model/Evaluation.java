@@ -5,7 +5,6 @@ import Main.Controller.ChangeModus;
 public class Evaluation extends Game {
 
     private static int winnerLine;
-    
 
     public static boolean X_CheckForWinner() {
         if (PlayBoard[0][0] == 'X' && PlayBoard[0][1] == 'X' && PlayBoard[0][2] == 'X') {
@@ -64,7 +63,7 @@ public class Evaluation extends Game {
         } else
             return false;
     }
-    public static void setWinnerLine(int i){
+    private static void setWinnerLine(int i){
         winnerLine = i;
     }
     
@@ -74,7 +73,7 @@ public class Evaluation extends Game {
         
     }
 
-    public static boolean AI_CheckForWinner(char[] board, char player){
+    static boolean AI_CheckForWinner(char[] board, char player){
 
         if (board[0] == player && board[1] == player && board[2] == player) {
             setWinnerLine(1);

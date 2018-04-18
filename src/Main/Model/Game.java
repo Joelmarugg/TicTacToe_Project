@@ -12,7 +12,6 @@ public class Game {
     private int SpotsAvailable;
 
 
-
     public void NewGame() {
 
       /* PlayBoard = new char[][] {{'O','-','X'},
