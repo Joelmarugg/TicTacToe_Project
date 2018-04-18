@@ -1,19 +1,15 @@
 package Main.Model;
 
-import Main.Controller.ChangeModus;
-import Main.Controller.TicTacToe_ControllerAI;
-import Main.Main;
 import Main.View.TicTacToe_View;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 
 import javax.swing.*;
-import java.util.Random;
 
 public class TicTacToe_ModelAI extends Game {
 
-    public TicTacToe_View view;
+    private TicTacToe_View view;
     public int row;
     public int column;
     public boolean isBeginner = false;
@@ -43,8 +39,7 @@ public class TicTacToe_ModelAI extends Game {
             //((Button) (getNodeByRowColumnIndex(row,col,view.GameGrid))).setText("X"); TODO why is this not working??
         }
 
-        public void AIMove () {
-
+        private void AIMove () {
 
             if (level == 1) {
                 char [] board = getNewBoard();

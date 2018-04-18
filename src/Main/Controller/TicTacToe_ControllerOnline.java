@@ -6,12 +6,12 @@ import javafx.application.Platform;
 import javafx.scene.control.Menu;
 import javafx.scene.layout.Pane;
 
-public class TicTacToe_ControllerOnline extends ChangeModus {
+class TicTacToe_ControllerOnline extends ChangeModus {
 
-    TicTacToe_View view;
-    TicTacToe_ModelOnline model;
+    private TicTacToe_View view;
+    private TicTacToe_ModelOnline model;
 
-    public TicTacToe_ControllerOnline (TicTacToe_ModelOnline model, TicTacToe_View view){
+    TicTacToe_ControllerOnline(TicTacToe_ModelOnline model, TicTacToe_View view){
 
         this.model = model;
         this.view = view;
@@ -23,6 +23,7 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
             HelpPane.setId("HelpPane");
             view.root.setCenter(HelpPane);
             view.New_Game_Btn.setDisable(true);
+
         });
 
         ((Menu) (view.OptionsMenu.getItems().get(0))).getItems().get(0).setOnAction((event) -> {
@@ -61,15 +62,7 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
             model.NewGame();
         });
 
-        view.Exit_Btn.setOnAction((event) -> {
-
-            Platform.exit();
-
-
-        });
-
-
-
+        view.Exit_Btn.setOnAction((event) -> Platform.exit());
 
 
 

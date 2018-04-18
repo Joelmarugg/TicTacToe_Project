@@ -25,11 +25,10 @@ public class TicTacToe_View {
      public Scene scene;
      public Menu OptionsMenu;
      public Menu HelpMenu;
-     public VBox RightLabel_Box;
-     public VBox LeftLabel_Box;
+     private VBox RightLabel_Box;
+     private VBox LeftLabel_Box;
      public BorderPane root;
      public Label LeftLabel;
-
 
 
 

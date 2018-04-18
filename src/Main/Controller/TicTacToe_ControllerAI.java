@@ -48,6 +48,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
             HelpPane.setId("HelpPane");
             view.root.setCenter(HelpPane);
             view.New_Game_Btn.setDisable(true);
+
         });
 
         ((Menu) (view.OptionsMenu.getItems().get(0))).getItems().get(0).setOnAction((event) -> {
@@ -265,11 +266,7 @@ public class TicTacToe_ControllerAI extends ChangeModus {
 
         });
 
-        view.Exit_Btn.setOnAction((event) -> {
-
-            Platform.exit();
-
-        });
+        view.Exit_Btn.setOnAction((event) -> Platform.exit());
 
         ((Menu) (view.ModusMenu.getItems().get(2))).getItems().get(0).setOnAction((event) -> {
 
@@ -300,8 +297,6 @@ public class TicTacToe_ControllerAI extends ChangeModus {
             ChangeToOnline(view);
             model.NewGame();
         });
-
-
     }
 
 

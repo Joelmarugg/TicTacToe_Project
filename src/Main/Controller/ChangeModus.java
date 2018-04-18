@@ -18,14 +18,14 @@ import java.awt.*;
 
 public class ChangeModus {
 
-    TicTacToe_View view;
+    private TicTacToe_View view;
     TicTacToe_ControllerAI controllerAI;
-    static public String currentSheet ="Grass.css";
+    private static String currentSheet = "Grass.css";
     public Button b1 = null;
     public Button b2 = null;
     public Button b3 = null;
-    public Timeline timeline1;
-    public boolean start = false;
+    private Timeline timeline1;
+    private boolean start = false;
     public boolean first = true;
 
 
@@ -33,7 +33,7 @@ public class ChangeModus {
 
 
 
-    public void ChangeToOnline(TicTacToe_View view) {
+    void ChangeToOnline(TicTacToe_View view) {
 
         this.view = view;
 
@@ -45,7 +45,7 @@ public class ChangeModus {
     }
 
 
-    public void ChangeToOffline(TicTacToe_View view) {
+    void ChangeToOffline(TicTacToe_View view) {
 
         this.view = view;
 
@@ -56,7 +56,7 @@ public class ChangeModus {
         TicTacToe_ControllerOffline controllerOffline = new TicTacToe_ControllerOffline(modelOffline, newView);
     }
 
-    public void ChangeToAIEasy(TicTacToe_View view) {
+    void ChangeToAIEasy(TicTacToe_View view) {
 
         this.view = view;
 
@@ -68,7 +68,7 @@ public class ChangeModus {
         TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI, newView, 1);
     }
 
-    public void ChangeToAIMedium(TicTacToe_View view) {
+    void ChangeToAIMedium(TicTacToe_View view) {
 
         this.view = view;
 
@@ -81,7 +81,7 @@ public class ChangeModus {
 
     }
 
-    public void ChangeToAIHard(TicTacToe_View view) {
+    void ChangeToAIHard(TicTacToe_View view) {
 
         this.view = view;
 
@@ -93,9 +93,8 @@ public class ChangeModus {
         TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI, newView, 3);
     }
 
-    public static void DisableAllButtons(TicTacToe_View view) {
+    static void DisableAllButtons(TicTacToe_View view) {
 
-        view = view;
 
         view.Btn1.setDisable(true);
         view.Btn4.setDisable(true);
@@ -108,7 +107,7 @@ public class ChangeModus {
         view.Btn9.setDisable(true);
     }
 
-    public void EnableAllButtons(TicTacToe_View view) {
+    void EnableAllButtons(TicTacToe_View view) {
 
         this.view = view;
 
@@ -123,7 +122,7 @@ public class ChangeModus {
         view.Btn9.setDisable(false);
     }
 
-    public void ResetTextOfButtons(TicTacToe_View view) {
+    void ResetTextOfButtons(TicTacToe_View view) {
 
         this.view = view;
 
@@ -138,7 +137,7 @@ public class ChangeModus {
         view.Btn9.setText("");
     }
 
-    public void ResetImageOfButtons(TicTacToe_View view) {
+    void ResetImageOfButtons(TicTacToe_View view) {
 
 
            view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/transparent.png')");
@@ -154,7 +153,7 @@ public class ChangeModus {
     }
 
 
-    public static void setCurrentSheet(String s, Scene sc){
+    static void setCurrentSheet(String s, Scene sc){
         sc.getStylesheets().clear();
         sc.getStylesheets().add(s);
 
@@ -167,7 +166,7 @@ public class ChangeModus {
 
 
 
-    public void OwinnerEffect(Button btn1, Button btn2, Button btn3){
+    private void OwinnerEffect(Button btn1, Button btn2, Button btn3){
 
         timeline1 = new Timeline(new KeyFrame(Duration.seconds(0.5), evt -> btn1.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
                 new KeyFrame(Duration.seconds(0.5), evt -> btn2.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
@@ -185,7 +184,7 @@ public class ChangeModus {
     }
 
 
-    public void XwinnerEffect(Button btn1, Button btn2, Button btn3){
+    private void XwinnerEffect(Button btn1, Button btn2, Button btn3){
 
         timeline1 = new Timeline(new KeyFrame(Duration.seconds(0.5), evt -> btn1.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
                 new KeyFrame(Duration.seconds(0.5), evt -> btn2.setStyle("-fx-background-image: url('Main/Stuff/transparent.png');" )),
@@ -202,13 +201,13 @@ public class ChangeModus {
 
     }
 
-    public void stopAnimation(){
+    void stopAnimation(){
         if(start)
             timeline1.stop();
         start = false;
     }
 
-    public void startOAnimation() {
+    void startOAnimation() {
         if (Evaluation.getWinnerLine() == 1) {
             OwinnerEffect(view.Btn1, view.Btn2, view.Btn3);
         } else if (Evaluation.getWinnerLine() == 2) {
@@ -228,7 +227,7 @@ public class ChangeModus {
         }
     }
 
-    public void startXAnimation() {
+    void startXAnimation() {
         if (Evaluation.getWinnerLine() == 1) {
             XwinnerEffect(view.Btn1, view.Btn2, view.Btn3);
         } else if (Evaluation.getWinnerLine() == 2) {
@@ -247,6 +246,4 @@ public class ChangeModus {
             XwinnerEffect(view.Btn7, view.Btn5, view.Btn3);
         }
     }
-
-
 }

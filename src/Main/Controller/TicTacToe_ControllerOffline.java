@@ -12,8 +12,8 @@ import java.util.List;
 
 public class TicTacToe_ControllerOffline extends ChangeModus{
 
-    TicTacToe_ModelOffline model;
-    TicTacToe_View view;
+    private TicTacToe_ModelOffline model;
+    private TicTacToe_View view;
 
 
 
@@ -76,11 +76,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
 
         });
 
-        view.Exit_Btn.setOnAction((event) -> {
-
-            Platform.exit();
-
-        });
+        view.Exit_Btn.setOnAction((event) -> Platform.exit());
 
         view.New_Game_Btn.setOnAction((event) -> {
             model.NewGame();
@@ -143,7 +139,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
             view.Btn2.setDisable(true);
             if (model.CheckTie()){
                 System.out.println("its a tie.. no winner!");
-            };
+            }
             System.out.println("you pressed button 2");
         });
 
@@ -169,7 +165,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
             view.Btn3.setDisable(true);
             if (model.CheckTie()){
                 System.out.println("its a tie.. no winner!");
-            };
+            }
             System.out.println("you pressed button 3");
         });
 
@@ -183,7 +179,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
                     System.out.println("Player O winns");
                 }
             }else{
-                view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/X.png')");;
+                view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 model.X_move(1,0);
                 if (Evaluation.X_CheckForWinner()){
                     DisableAllButtons(view);
@@ -195,7 +191,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
             view.Btn4.setDisable(true);
             if (model.CheckTie()){
                 System.out.println("its a tie.. no winner!");
-            };
+            }
             System.out.println("you pressed button 4");
         });
 
@@ -221,7 +217,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
             view.Btn5.setDisable(true);
             if (model.CheckTie()){
                 System.out.println("its a tie.. no winner!");
-            };
+            }
             System.out.println("you pressed button 5");
         });
 
@@ -247,7 +243,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
             view.Btn6.setDisable(true);
             if (model.CheckTie()){
                 System.out.println("its a tie.. no winner!");
-            };
+            }
             System.out.println("you pressed button 6");
         });
 
@@ -275,6 +271,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
                 System.out.println("its a tie.. no winner!");
             }
             System.out.println("you pressed button 7");
+
         });
 
         view.Btn8.setOnAction((event) -> {
@@ -329,9 +326,4 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
             System.out.println("you pressed button 9");
         });
     }
-
-
-
-
-
 }

@@ -1,7 +1,5 @@
 package Main.Model;
 
-import java.util.ArrayList;
-
 public class Game {
 
     static char[][] PlayBoard = new char[3][3];
@@ -12,7 +10,6 @@ public class Game {
     public boolean Winner = false;
     int level;
     private int SpotsAvailable;
-
 
 
 
@@ -98,7 +95,7 @@ public class Game {
         }
     }
 
-    public int minimax(char[] newPlayBoard, char player){
+    int minimax(char[] newPlayBoard, char player){
 
 
 
@@ -148,7 +145,7 @@ public class Game {
 
             if (newPlayBoard[i] == '-') {
 
-                newPlayBoard[i] = (char) player;
+                newPlayBoard[i] = player;
 
                 int move = 0;
 
@@ -213,7 +210,7 @@ public class Game {
 
     }
 
-    public void position_of(int[] Moves, int bestMove, char [] NewPlayBoard) {
+    private void position_of(int[] Moves, int bestMove, char[] NewPlayBoard) {
         for (int i = 0; i < Moves.length; i++) {
             if (Moves[i] == bestMove) {
                 GoTo = EmptySpots(NewPlayBoard)[i];
@@ -225,7 +222,7 @@ public class Game {
     }
 
 
-    public int[] EmptySpots(char[] board){
+    private int[] EmptySpots(char[] board){
 
         int[] ES = new int[SpotsAvailable];
         int c = 0;
