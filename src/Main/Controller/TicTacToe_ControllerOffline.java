@@ -4,6 +4,7 @@ import Main.Model.*;
 import Main.View.TicTacToe_View;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.util.List;
@@ -30,6 +31,15 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
         view.ModusMenu.getItems().get(0).setDisable(true);
 
 
+
+        (view.HelpMenu.getItems().get(0)).setOnAction((event) -> {
+
+            Pane HelpPane = new Pane();
+
+            HelpPane.setId("HelpPane");
+
+            view.root.setCenter(HelpPane);
+        });
 
         ((Menu) (view.OptionsMenu.getItems().get(0))).getItems().get(0).setOnAction((event) -> {
             //change theme to "Sky"

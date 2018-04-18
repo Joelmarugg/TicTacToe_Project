@@ -24,8 +24,10 @@ public class TicTacToe_View {
      public Menu ModusMenu;
      public Scene scene;
      public Menu OptionsMenu;
+     public Menu HelpMenu;
      public VBox RightLabel_Box;
      public VBox LeftLabel_Box;
+     public BorderPane root;
 
 
 
@@ -33,7 +35,7 @@ public class TicTacToe_View {
     public TicTacToe_View(Stage PrimaryStage, String style){
 
 
-        BorderPane root = new BorderPane();
+        root = new BorderPane();
 
 ////////////////////////////////GameGrid/////////////////////////////////////
         //GameGrid to play
@@ -131,7 +133,7 @@ public class TicTacToe_View {
 
 
         // HelpMenu for game description
-        Menu HelpMenu = new Menu("Help",null,
+        HelpMenu = new Menu("Help",null,
                 new MenuItem("How to play?"));
 
         // OptionsMenu for different settings

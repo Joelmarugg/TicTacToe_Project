@@ -86,3 +86,8 @@
 .menu-item:focused{
     -fx-background-color: blue;
 }
+#HelpPane{
+    -fx-background-image: url('Main/Stuff/Help.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: stretch,auto;
+}

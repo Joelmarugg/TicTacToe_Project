@@ -5,6 +5,9 @@ import Main.Model.TicTacToe_ModelAI;
 import Main.View.TicTacToe_View;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 
 import static Main.Controller.ChangeModus.*;
 
@@ -31,6 +34,16 @@ public class TicTacToe_ControllerAI extends ChangeModus {
         } else if (level == 3) {
             ((Menu) (view.ModusMenu.getItems().get(2))).getItems().get(2).setDisable(true);
         }
+
+
+        (view.HelpMenu.getItems().get(0)).setOnAction((event) -> {
+
+            Pane HelpPane = new Pane();
+
+            HelpPane.setId("HelpPane");
+
+            view.root.setCenter(HelpPane);
+        });
 
         ((Menu) (view.OptionsMenu.getItems().get(0))).getItems().get(0).setOnAction((event) -> {
             //change theme to "Sky"
