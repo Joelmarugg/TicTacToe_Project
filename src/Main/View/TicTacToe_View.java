@@ -19,7 +19,7 @@ public class TicTacToe_View {
      public Button Btn4; public Button Btn5; public Button Btn6;
      public Button Btn7; public Button Btn8; public Button Btn9;
      public Button New_Game_Btn;
-     public Button Play_Btn;
+     public Button Exit_Btn;
      public GridPane GameGrid;
      public Menu ModusMenu;
      public Scene scene;
@@ -28,6 +28,7 @@ public class TicTacToe_View {
      public VBox RightLabel_Box;
      public VBox LeftLabel_Box;
      public BorderPane root;
+     public Label LeftLabel;
 
 
 
@@ -89,12 +90,12 @@ public class TicTacToe_View {
           //      BorderStrokeStyle.SOLID, new CornerRadii(0), new BorderWidths(10))));
 
         // VBox for Let's Play! button
-        VBox Play_Btn_Box = new VBox();
-        Play_Btn_Box.setAlignment(Pos.CENTER);
-        Play_Btn_Box.prefWidthProperty().bind(ControlArea.widthProperty());
-        Play_Btn = new Button("Let's Play!");
-        Play_Btn.setId("Play_Btn");
-        Play_Btn_Box.getChildren().add(Play_Btn);
+        VBox Exit_Btn_Box = new VBox();
+        Exit_Btn_Box.setAlignment(Pos.CENTER);
+        Exit_Btn_Box.prefWidthProperty().bind(ControlArea.widthProperty());
+        Exit_Btn = new Button("Exit Game");
+        Exit_Btn.setId("Exit_Btn");
+        Exit_Btn_Box.getChildren().add(Exit_Btn);
 
         // VBox for New Game button
         VBox New_Game_Box = new VBox();
@@ -113,9 +114,9 @@ public class TicTacToe_View {
         Round_Counter_Box.getChildren().add(Round_Counter_Text);*/
 
 
-
-        ControlArea.getChildren().add(Play_Btn_Box);
         ControlArea.getChildren().add(New_Game_Box);
+        ControlArea.getChildren().add(Exit_Btn_Box);
+
 
 //////////////////////////////////MenuBar/////////////////////////////////////////////
         // MenuBar for options and help
@@ -156,7 +157,7 @@ public class TicTacToe_View {
         RightLabel_Box = new VBox();
         RightLabel_Box.setId("RightLabel_Box");
         Label RightLabel = new Label();
-        RightLabel.setText("Player 2");
+        RightLabel.setText("Player O");
         RightLabel.setId("RightLabel");
         RightLabel_Box.getChildren().add(RightLabel);
 
@@ -164,8 +165,8 @@ public class TicTacToe_View {
         //Left side
         LeftLabel_Box = new VBox();
         LeftLabel_Box.setId("LeftLabel_Box");
-        Label LeftLabel = new Label();
-        LeftLabel.setText("Player 1");
+        LeftLabel = new Label();
+        LeftLabel.setText("Player X");
         LeftLabel.setId("LeftLabel");
         LeftLabel_Box.getChildren().add(LeftLabel);
 
@@ -184,7 +185,7 @@ public class TicTacToe_View {
 
 
 
-        scene = new Scene(root, 600, 600);
+        scene = new Scene(root, 900, 800);
 
         PrimaryStage.setTitle("Tic Tac Toe");
         PrimaryStage.setScene(scene);

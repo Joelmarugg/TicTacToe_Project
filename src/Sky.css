@@ -28,7 +28,7 @@
     -fx-text-fill: #395306;
     -fx-font-size: 20;
 }
-#Play_Btn {
+#Exit_Btn {
     -fx-background-color: linear-gradient(#bef0ff,#98f5ff),
     radial-gradient(center 50% -40%, radius 200%,  #d6fffb 45%, #afffee 50%);
     -fx-background-radius: 6, 5;
@@ -37,7 +37,7 @@
     -fx-text-fill: #395306;
     -fx-font-size: 20;
 }
-#Play_Btn:hover {
+#Exit_Btn:hover {
     -fx-background-color: linear-gradient(#d6fffb,#afffee ),
     radial-gradient(center 50% -40%, radius 200%, #bef0ff 45%, #98f5ff 50%);
     -fx-background-radius: 6, 5;

@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Game {
 
-    public static char[][] PlayBoard = new char[3][3];
-    public int NumberOfMoves = 1;
-    public char player = 'X';
-    public int depth = 0;
-    public int GoTo;
+    static char[][] PlayBoard = new char[3][3];
+    int NumberOfMoves = 1;
+    char player = 'X';
+    int depth = 0;
+    int GoTo;
     public boolean Winner = false;
-    public int level;
-    public int SpotsAvailable;
+    int level;
+    private int SpotsAvailable;
 
 
 
@@ -23,6 +23,7 @@ public class Game {
                                  {'-','O','O'}};*/
         Winner = false;
         depth = 0;
+
 
         for (int i = 0; i < PlayBoard.length; i++) {
             for (int j = 0; j < PlayBoard[i].length; j++) {
@@ -69,7 +70,7 @@ public class Game {
     }
 
 
-    public static char[] getNewBoard( ) {
+    static char[] getNewBoard() {
         char[] NewBoard = new char[9];
         int count = 0;
         for (int i = 0; i<3; i++) {

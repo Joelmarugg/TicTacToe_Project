@@ -2,6 +2,7 @@ package Main.Controller;
 
 import Main.Model.*;
 import Main.View.TicTacToe_View;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.layout.Pane;
@@ -35,10 +36,9 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
         (view.HelpMenu.getItems().get(0)).setOnAction((event) -> {
 
             Pane HelpPane = new Pane();
-
             HelpPane.setId("HelpPane");
-
             view.root.setCenter(HelpPane);
+            view.New_Game_Btn.setDisable(true);
         });
 
         ((Menu) (view.OptionsMenu.getItems().get(0))).getItems().get(0).setOnAction((event) -> {
@@ -76,6 +76,12 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
 
         });
 
+        view.Exit_Btn.setOnAction((event) -> {
+
+            Platform.exit();
+
+        });
+
         view.New_Game_Btn.setOnAction((event) -> {
             model.NewGame();
             model.ResetNumberOfMoves();
@@ -109,7 +115,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
             view.Btn1.setDisable(true);
             if (model.CheckTie()){
                 System.out.println("its a tie.. no winner!");
-            };
+            }
             System.out.println("you pressed button 1");
 
         });
@@ -267,7 +273,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
             view.Btn7.setDisable(true);
             if (model.CheckTie()){
                 System.out.println("its a tie.. no winner!");
-            };
+            }
             System.out.println("you pressed button 7");
         });
 
@@ -293,7 +299,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
             view.Btn8.setDisable(true);
             if (model.CheckTie()){
                 System.out.println("its a tie.. no winner!");
-            };
+            }
             System.out.println("you pressed button 8");
         });
 
@@ -319,7 +325,7 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
             view.Btn9.setDisable(true);
             if (model.CheckTie()){
                 System.out.println("its a tie.. no winner!");
-            };
+            }
             System.out.println("you pressed button 9");
         });
     }

@@ -2,6 +2,7 @@ package Main.Controller;
 
 import Main.Model.TicTacToe_ModelOnline;
 import Main.View.TicTacToe_View;
+import javafx.application.Platform;
 import javafx.scene.control.Menu;
 import javafx.scene.layout.Pane;
 
@@ -19,10 +20,9 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
         (view.HelpMenu.getItems().get(0)).setOnAction((event) -> {
 
             Pane HelpPane = new Pane();
-
             HelpPane.setId("HelpPane");
-
             view.root.setCenter(HelpPane);
+            view.New_Game_Btn.setDisable(true);
         });
 
         ((Menu) (view.OptionsMenu.getItems().get(0))).getItems().get(0).setOnAction((event) -> {
@@ -59,6 +59,13 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
 
             ChangeToAIHard(view);
             model.NewGame();
+        });
+
+        view.Exit_Btn.setOnAction((event) -> {
+
+            Platform.exit();
+
+
         });
 
 
