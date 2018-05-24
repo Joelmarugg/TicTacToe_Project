@@ -1,18 +1,28 @@
 package Main.Controller.Network;
 
+import Main.Model.Game;
+
 import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 
 public class Client {
+
+    Socket client;
 
 
     public Client(){
         try {
+            client = new Socket("localhost", 14909);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Client started");
+    }
 
-            Socket client = new Socket("localhost", 5555);
-            System.out.println("Client started");
-
+    public void sendTurn(){
+        try {
 
             //Send streams to server
             OutputStream out = client.getOutputStream();
@@ -23,9 +33,12 @@ public class Client {
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
 
+            char[] board = Game.getNewBoard();
+            String message = String.valueOf(board);
+
 
             //Send to server
-            writer.write("hallo Server!\n");
+            writer.write(message);
             writer.flush();
 
             String s = null;
@@ -37,11 +50,10 @@ public class Client {
             reader.close();
 
 
-        }catch (UnknownHostException e) {
-            e.printStackTrace();
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
+
 }

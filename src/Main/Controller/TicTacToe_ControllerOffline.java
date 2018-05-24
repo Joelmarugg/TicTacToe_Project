@@ -26,7 +26,14 @@ public class TicTacToe_ControllerOffline extends ChangeModus{
 
 
 
-        DisableAllButtons(view);
+       // DisableAllButtons(view);
+        model.NewGame();
+        model.ResetNumberOfMoves();
+        ResetTextOfButtons(view);
+        stopAnimation();
+        ResetImageOfButtons(view);
+        EnableAllButtons(view);
+        System.out.println("you started a new game");
 
 
         view.ModusMenu.getItems().get(0).setDisable(true);

@@ -66,7 +66,7 @@ public class Game {
     }
 
 
-    static char[] getNewBoard() {
+    public static char[] getNewBoard() {
         char[] NewBoard = new char[9];
         int count = 0;
         for (int i = 0; i<3; i++) {

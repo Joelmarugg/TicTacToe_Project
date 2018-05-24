@@ -6,12 +6,23 @@ import java.net.Socket;
 
 public class Server {
 
+    ServerSocket server;
+
     public Server() {
 
+        //Start the server
         try {
-            //Start the server
-            ServerSocket server = new ServerSocket(5555);
-            System.out.println("Server started");
+            server = new ServerSocket(14909);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Server started");
+
+    }
+
+    public void sendTurn(){
+
+        try {
 
             //look for client
             Socket client = server.accept();
@@ -26,6 +37,8 @@ public class Server {
 
             String s = null;
             while ((s = reader.readLine()) != null) {
+
+
                 writer.write(s + "\n");
                 writer.flush();
                 System.out.println("received from client: " + s);

@@ -27,7 +27,15 @@ public class TicTacToe_ControllerAI extends ChangeModus {
         this.level = level;
 
 
-        DisableAllButtons(view);
+        //DisableAllButtons(view);
+        model.NewGame();
+        model.ResetNumberOfMoves();
+        ResetTextOfButtons(view);
+        stopAnimation();
+        ResetImageOfButtons(view);
+        EnableAllButtons(view);
+        model.setBeginner();
+        System.out.println("you started a new game");
 
         view.LeftLabel.setText("Computer");
 

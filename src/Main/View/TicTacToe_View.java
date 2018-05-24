@@ -115,7 +115,7 @@ public class TicTacToe_View {
         MenuBar MenuBar = new MenuBar();
         MenuBar.setId("MenuBar");
 
-        // HelpMenu for game description
+        // ModusMenu for game modes
         ModusMenu = new Menu("Modus", null,
                 new MenuItem("Offline 1 Vs. 1"),
                 new MenuItem("Online 1 Vs. 1"),

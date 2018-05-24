@@ -236,7 +236,7 @@ public class ChangeModus {
         }
     }
 
-    void startXAnimation() {
+   void startXAnimation() {
         if (Evaluation.getWinnerLine() == 1) {
             XwinnerEffect(view.Btn1, view.Btn2, view.Btn3);
         } else if (Evaluation.getWinnerLine() == 2) {
