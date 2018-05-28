@@ -9,17 +9,22 @@ import javafx.application.Platform;
 import javafx.scene.control.Menu;
 import javafx.scene.layout.Pane;
 
-class TicTacToe_ControllerOnline extends ChangeModus {
+import java.io.IOException;
+
+public class TicTacToe_ControllerOnline extends ChangeModus {
 
     private TicTacToe_View view;
     private TicTacToe_ModelOnline model;
     Client c;
     Server s;
+    public char[] gameBoard = Game.getNewBoard();
+
 
     TicTacToe_ControllerOnline(TicTacToe_ModelOnline model, TicTacToe_View view){
 
         this.model = model;
         this.view = view;
+
 
         model.NewGame();
         model.ResetNumberOfMoves();
@@ -42,11 +47,41 @@ class TicTacToe_ControllerOnline extends ChangeModus {
                 @Override
                 public void run() {
                     // Client c = new Client();
-                    s = new Server();
+                    s = new Server(TicTacToe_ControllerOnline.this);
+                    try {
+                        s.connect();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             };
             t.start();
         }
+        Thread checkboard = new Thread() {
+            public void run() {
+                while (true) {
+                    try {
+                        sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if (c != null) {
+                        String s = c.communicate("getBoard");
+                        for(int i =0; i< s.length();i++){
+                            gameBoard[i]= s.toCharArray()[i];
+
+                        }
+                    } else{
+                        s.serverBoard = String.valueOf(gameBoard);
+                    }
+
+
+                }
+            }
+        };
+        checkboard.start();
+
+
         System.out.println("you started a new game");
 
 
@@ -101,33 +136,60 @@ class TicTacToe_ControllerOnline extends ChangeModus {
 
         view.Btn1.setOnAction((event) -> {
 
-            if (model.turn) {
-                if(model.isHost){
-                    model.O_move(0,0);
-                    //c.getNewBoard();
-                }else if (model.isClient){
-                    model.X_move(0,0);
-                    c.sendTurn();
-                }
-            }else{
-                System.out.println("its not your turn");
+
+            if (model.isHost) {
+                model.O_move(0, 0);
+                view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
+                s.serverBoard = String.valueOf(Game.getNewBoard());
+                gameBoard =model.getNewBoard();
+
+            } else if (model.isClient) {
+                model.X_move(0, 0);
+                view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
+                c.communicate("changeboard," + String.valueOf(Game.getNewBoard()));
+
             }
 
+            view.Btn1.setDisable(true);
         });
 
         view.Btn2.setOnAction((event) -> {
-            char[] board = Game.getNewBoard();
-            String message = String.valueOf(board);
-            System.out.println(message);
+            if (model.isHost) {
+                model.O_move(0, 1);
+                view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
+
+                s.serverBoard = String.valueOf(model.getNewBoard());
+                gameBoard =model.getNewBoard();
+
+            } else if (model.isClient) {
+                model.X_move(0, 1);
+                view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
+                c.communicate("changeboard," + String.valueOf(Game.getNewBoard()));
+
+            }
+
+            view.Btn2.setDisable(true);
 
 
         });
 
         view.Btn3.setOnAction((event) -> {
-            if(c!=null)
-            c.sendTurn();
-            else
-            s.sendTurn();
+            if (model.isHost) {
+                model.O_move(0, 2);
+                view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
+
+                s.serverBoard = String.valueOf(Game.getNewBoard());
+                gameBoard = model.getNewBoard();
+
+            } else if (model.isClient) {
+                model.X_move(0, 2);
+                view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
+
+                c.communicate("changeboard," + String.valueOf(Game.getNewBoard()));
+
+            }
+
+            view.Btn3.setDisable(true);
         });
 
         view.New_Game_Btn.setOnAction((event) -> {
@@ -152,13 +214,15 @@ class TicTacToe_ControllerOnline extends ChangeModus {
                     @Override
                     public void run() {
                         // Client c = new Client();
-                        s = new Server();
+                        s = new Server(TicTacToe_ControllerOnline.this);
                     }
                 };
                 t.start();
             }
 
         });
+
+        //checkboard.start();
 
     }
 }

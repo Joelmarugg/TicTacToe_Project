@@ -133,9 +133,7 @@ public class TicTacToe_View {
         OptionsMenu = new Menu("Options");
         Menu ThemeMenu = new Menu("Theme", null,
                 new MenuItem("Sky"),
-                new MenuItem("Grass"),
-                new MenuItem("Dogs"),
-                new MenuItem("Dark"));
+                new MenuItem("Grass"));
         OptionsMenu.getItems().add(ThemeMenu);
 
 

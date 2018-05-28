@@ -21,29 +21,28 @@ public class Client {
         System.out.println("Client started");
     }
 
-    public void sendTurn(){
+    public String communicate(String message){
         try {
 
             //Send streams to server
             OutputStream out = client.getOutputStream();
-            PrintWriter writer = new PrintWriter(out);
+            PrintStream writer = new PrintStream(out);
 
             //receive from server
             InputStream in = client.getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
 
-            char[] board = Game.getNewBoard();
-            String message = String.valueOf(board);
 
 
             //Send to server
-            writer.write(message);
+            writer.println(message);
             writer.flush();
 
             String s = null;
             while ((s = reader.readLine()) != null) {
                 System.out.println("received from Server: " + s);
+                return s;
             }
 
             writer.close();
@@ -54,6 +53,7 @@ public class Client {
             e.printStackTrace();
         }
 
+        return null;
     }
 
 }

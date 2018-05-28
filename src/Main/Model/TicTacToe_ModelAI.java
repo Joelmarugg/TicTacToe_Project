@@ -111,7 +111,7 @@ public class TicTacToe_ModelAI extends Game {
 
             }else if (level == 3) {
 
-                //char[] board = {'O', '-', 'X', 'X', '-', 'X', '-', 'O', 'O'};
+                //char[] gameBoard = {'O', '-', 'X', 'X', '-', 'X', '-', 'O', 'O'};
 
                 char [] board = getNewBoard();
 

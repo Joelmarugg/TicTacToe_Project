@@ -1,5 +1,9 @@
 package Main.Model;
 
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
+import javafx.scene.layout.GridPane;
+
 import javax.swing.*;
 
 public class TicTacToe_ModelOnline extends Game{
@@ -9,10 +13,12 @@ public class TicTacToe_ModelOnline extends Game{
     public boolean turn = false;
 
 
+
     public TicTacToe_ModelOnline(){
 
         super();
     }
+
 
     public void setHostClient(){
         int eingabe = JOptionPane.showConfirmDialog(null,
@@ -36,6 +42,8 @@ public class TicTacToe_ModelOnline extends Game{
 
 
     }
+
+
 
 }
 
