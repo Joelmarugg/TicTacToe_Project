@@ -93,7 +93,7 @@ public class ChangeModus {
         TicTacToe_ControllerAI controllerAI = new TicTacToe_ControllerAI(modelAI, newView, 3);
     }
 
-    static void DisableAllButtons(TicTacToe_View view) {
+    public static void DisableAllButtons(TicTacToe_View view) {
 
 
         view.Btn1.setDisable(true);
@@ -216,7 +216,7 @@ public class ChangeModus {
         start = false;
     }
 
-    void startOAnimation() {
+    public void startOAnimation() {
         if (Evaluation.getWinnerLine() == 1) {
             OwinnerEffect(view.Btn1, view.Btn2, view.Btn3);
         } else if (Evaluation.getWinnerLine() == 2) {
@@ -236,7 +236,7 @@ public class ChangeModus {
         }
     }
 
-   void startXAnimation() {
+   public void startXAnimation() {
         if (Evaluation.getWinnerLine() == 1) {
             XwinnerEffect(view.Btn1, view.Btn2, view.Btn3);
         } else if (Evaluation.getWinnerLine() == 2) {

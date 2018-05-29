@@ -41,7 +41,7 @@ public class Client {
 
             String s = null;
             while ((s = reader.readLine()) != null) {
-                System.out.println("received from Server: " + s);
+                //System.out.println("received from Server: " + s);
                 return s;
             }
 
