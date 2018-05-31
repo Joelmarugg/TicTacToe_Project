@@ -76,6 +76,7 @@ public class Server  {
                                 case 0:
                                     mTicTacToe_ControllerOnline.view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/" + ((char) (mserverBoard.toCharArray()[i])) + ".png')");
                                     mTicTacToe_ControllerOnline.view.Btn1.setDisable(true);
+
                                     break;
                                 case 1:
                                     mTicTacToe_ControllerOnline.view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/" + ((char) (mserverBoard.toCharArray()[i])) + ".png')");
