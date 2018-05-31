@@ -11,6 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Menu;
 import javafx.scene.layout.Pane;
+import sun.rmi.runtime.Log;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -22,8 +23,7 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
     private TicTacToe_ModelOnline model;
     Client c;
     Server s;
-    public boolean clientTurn = true;
-    public boolean hostTurn = false;
+    public boolean yourTurn = false;
     public char[] gameBoard = Game.getNewBoard();
 
 
@@ -45,6 +45,7 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
                 @Override
                 public void run() {
                     c = new Client();
+                    yourTurn=true;
                     //Server s = new Server();
                 }
             };
@@ -79,43 +80,94 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
                         String s = c.communicate("getBoard");
                         for(int i =0; i< s.length();i++) {
                             if (s.toCharArray()[i] != '-') {
+                                if(gameBoard[i]!=s.toCharArray()[i]){
+                                    yourTurn=true;
+
+                                    System.err.println("Activated Client. \nS: "+ s+" \nC:"+Arrays.toString(gameBoard));
+                                }
                                 gameBoard[i] = s.toCharArray()[i];
                                 switch (i) {
                                     case 0:
                                         view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/" + ((char) (s.toCharArray()[i])) + ".png')");
                                         view.Btn1.setDisable(true);
+                                        if (((char)(gameBoard[i]))==('O')){
+                                            model.O_move(0, 0);
+                                        }else{
+                                            model.X_move(0,0);
+                                        }
                                         break;
                                     case 1:
                                         view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/" + ((char) (s.toCharArray()[i])) + ".png')");
                                         view.Btn2.setDisable(true);
+                                        if (((char)(gameBoard[i]))==('O')){
+                                            model.O_move(0, 1);
+                                        }else{
+                                            model.X_move(0,1);
+                                        }
+
                                         break;
                                     case 2:
                                         view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/" + ((char) (s.toCharArray()[i])) + ".png')");
                                         view.Btn3.setDisable(true);
+                                        if (((char)(gameBoard[i]))==('O')){
+                                            model.O_move(0, 2);
+                                        }else{
+                                            model.X_move(0,2);
+                                        }
                                         break;
                                     case 3:
                                         view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/" + ((char) (s.toCharArray()[i])) + ".png')");
                                         view.Btn4.setDisable(true);
+                                        if (((char)(gameBoard[i]))==('O')){
+                                            model.O_move(1, 0);
+                                        }else{
+                                            model.X_move(1,0);
+                                        }
                                         break;
                                     case 4:
                                         view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/" + ((char) (s.toCharArray()[i])) + ".png')");
                                         view.Btn5.setDisable(true);
+                                        if (((char)(gameBoard[i]))==('O')){
+                                            model.O_move(1, 1);
+                                        }else{
+                                            model.X_move(1,1);
+                                        }
                                         break;
                                     case 5:
                                         view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/" + ((char) (s.toCharArray()[i])) + ".png')");
                                         view.Btn6.setDisable(true);
+                                        if (((char)(gameBoard[i]))==('O')){
+                                            model.O_move(1, 2);
+                                        }else{
+                                            model.X_move(1,2);
+                                        }
                                         break;
                                     case 6:
                                         view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/" + ((char) (s.toCharArray()[i])) + ".png')");
                                         view.Btn7.setDisable(true);
+                                        if (((char)(gameBoard[i]))==('O')){
+                                            model.O_move(2, 0);
+                                        }else{
+                                            model.X_move(2,0);
+                                        }
                                         break;
                                     case 7:
                                         view.Btn8.setStyle("-fx-background-image: url('Main/Stuff/" + ((char) (s.toCharArray()[i])) + ".png')");
                                         view.Btn8.setDisable(true);
+                                        if (((char)(gameBoard[i]))==('O')){
+                                            model.O_move(2, 1);
+                                        }else{
+                                            model.X_move(2,1);
+                                        }
                                         break;
                                     case 8:
                                         view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/" + ((char) (s.toCharArray()[i])) + ".png')");
                                         view.Btn9.setDisable(true);
+                                        if (((char)(gameBoard[i]))==('O')){
+                                            model.O_move(2, 2);
+                                        }else{
+                                            model.X_move(2,2);
+                                        }
                                         break;
                                 }
                                 System.out.println("Current board: " + Arrays.toString(gameBoard));
@@ -189,14 +241,15 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
 
 
             if (model.isHost) {
-                if (hostTurn) {
+                if (yourTurn) {
+                    yourTurn=false;
+
                     model.O_move(0, 0);
                     view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                     s.serverBoard = String.valueOf(Game.getNewBoard());
                     gameBoard = model.getNewBoard();
                     view.Btn1.setDisable(true);
-                    hostTurn = false;
-                    clientTurn = true;
+
                     if (Evaluation.O_CheckForWinner()){
                         DisableAllButtons(view);
                         startOAnimation();
@@ -215,14 +268,14 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
                 }
 
             } else if (model.isClient) {
-                if (clientTurn) {
+                if (yourTurn) {
+                    yourTurn=false;
                     model.X_move(0, 0);
                     gameBoard = model.getNewBoard();
                     view.Btn1.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                     c.communicate("changeboard," + String.valueOf(gameBoard)+"c");
                     view.Btn1.setDisable(true);
-                    clientTurn = false;
-                    hostTurn = true;
+
                     if (Evaluation.X_CheckForWinner()){
                         DisableAllButtons(view);
                         startXAnimation();
@@ -250,14 +303,14 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
 
         view.Btn2.setOnAction((event) -> {
             if (model.isHost) {
-                if (hostTurn) {
-                model.O_move(0, 1);
+                if (yourTurn) {
+                    yourTurn=false;
+
+                    model.O_move(0, 1);
                 view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
                 s.serverBoard = String.valueOf(model.getNewBoard());
                 gameBoard =model.getNewBoard();
                 view.Btn2.setDisable(true);
-                    hostTurn = false;
-                    clientTurn = true;
                 if (Evaluation.O_CheckForWinner()){
                     DisableAllButtons(view);
                     startOAnimation();
@@ -276,14 +329,15 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
             }
 
             } else if (model.isClient) {
-                if (clientTurn) {
-                model.X_move(0, 1);
+                if (yourTurn) {
+                    yourTurn=false;
+
+                    model.X_move(0, 1);
                 gameBoard =model.getNewBoard();
                 view.Btn2.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
                 c.communicate("changeboard," + String.valueOf(gameBoard)+"c");
                     view.Btn2.setDisable(true);
-                    clientTurn = false;
-                    hostTurn = true;
+
                     if (Evaluation.X_CheckForWinner()){
                         DisableAllButtons(view);
                         startXAnimation();
@@ -313,15 +367,15 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
 
         view.Btn3.setOnAction((event) -> {
             if (model.isHost) {
-                if (hostTurn) {
-                model.O_move(0, 2);
+                if (yourTurn) {
+                    yourTurn=false;
+
+                    model.O_move(0, 2);
                 view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
 
                 s.serverBoard = String.valueOf(Game.getNewBoard());
                 gameBoard = model.getNewBoard();
                     view.Btn3.setDisable(true);
-                    hostTurn = false;
-                    clientTurn = true;
                     if (Evaluation.O_CheckForWinner()){
                         DisableAllButtons(view);
                         startOAnimation();
@@ -340,15 +394,16 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
                 }
 
             } else if (model.isClient) {
-                    if (clientTurn) {
-                    model.X_move(0, 2);
+                    if (yourTurn) {
+                        yourTurn=false;
+
+                        model.X_move(0, 2);
                 gameBoard =model.getNewBoard();
                 view.Btn3.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
 
                 c.communicate("changeboard," + String.valueOf(gameBoard)+"c");
                         view.Btn3.setDisable(true);
-                        clientTurn = false;
-                        hostTurn = true;
+
                         if (Evaluation.X_CheckForWinner()){
                             DisableAllButtons(view);
                             startXAnimation();
@@ -374,15 +429,16 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
 
         view.Btn4.setOnAction((event) -> {
             if (model.isHost) {
-                if (hostTurn) {
-                model.O_move(1, 0);
+                if (yourTurn) {
+                    yourTurn=false;
+
+                    model.O_move(1, 0);
                 view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
 
                 s.serverBoard = String.valueOf(Game.getNewBoard());
                 gameBoard = model.getNewBoard();
                     view.Btn4.setDisable(true);
-                    hostTurn = false;
-                    clientTurn = true;
+
                     if (Evaluation.O_CheckForWinner()){
                         DisableAllButtons(view);
                         startOAnimation();
@@ -401,15 +457,15 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
                 }
 
             } else if (model.isClient) {
-                    if (clientTurn) {
+                    if (yourTurn) {
                 model.X_move(1, 0);
                 gameBoard =model.getNewBoard();
                 view.Btn4.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
 
                 c.communicate("changeboard," + String.valueOf(gameBoard)+"c");
                         view.Btn4.setDisable(true);
-                        clientTurn = false;
-                        hostTurn = true;
+                        yourTurn=false;
+
                         if (Evaluation.X_CheckForWinner()){
                             DisableAllButtons(view);
                             startXAnimation();
@@ -435,15 +491,14 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
 
         view.Btn5.setOnAction((event) -> {
             if (model.isHost) {
-                if (hostTurn) {
+                if (yourTurn) {
                 model.O_move(1, 1);
                 view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
 
                 s.serverBoard = String.valueOf(Game.getNewBoard());
                 gameBoard = model.getNewBoard();
                     view.Btn5.setDisable(true);
-                    hostTurn = false;
-                    clientTurn = true;
+                    yourTurn=false;
                     if (Evaluation.O_CheckForWinner()){
                         DisableAllButtons(view);
                         startOAnimation();
@@ -462,15 +517,15 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
                 }
 
             } else if (model.isClient) {
-                    if (clientTurn) {
+                    if (yourTurn) {
                     model.X_move(1, 1);
                 gameBoard =model.getNewBoard();
                 view.Btn5.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
 
                 c.communicate("changeboard," + String.valueOf(gameBoard)+"c");
                         view.Btn5.setDisable(true);
-                        clientTurn = false;
-                        hostTurn = true;
+                        yourTurn=false;
+
                         if (Evaluation.X_CheckForWinner()){
                             DisableAllButtons(view);
                             startXAnimation();
@@ -496,15 +551,14 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
 
         view.Btn6.setOnAction((event) -> {
             if (model.isHost) {
-                if (hostTurn) {
+                if (yourTurn) {
                 model.O_move(1, 2);
                 view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
 
                 s.serverBoard = String.valueOf(Game.getNewBoard());
                 gameBoard = model.getNewBoard();
                     view.Btn6.setDisable(true);
-                    hostTurn = false;
-                    clientTurn = true;
+                    yourTurn=false;
                     if (Evaluation.O_CheckForWinner()){
                         DisableAllButtons(view);
                         startOAnimation();
@@ -523,15 +577,15 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
                 }
 
             } else if (model.isClient) {
-                    if (clientTurn) {
+                    if (yourTurn) {
                     model.X_move(1, 2);
                 gameBoard =model.getNewBoard();
                 view.Btn6.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
 
                 c.communicate("changeboard," + String.valueOf(gameBoard)+"c");
                         view.Btn6.setDisable(true);
-                        clientTurn = false;
-                        hostTurn = true;
+                        yourTurn=false;
+
                         if (Evaluation.X_CheckForWinner()){
                             DisableAllButtons(view);
                             startXAnimation();
@@ -556,15 +610,14 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
 
         view.Btn7.setOnAction((event) -> {
             if (model.isHost) {
-                if (hostTurn) {
+                if (yourTurn) {
                 model.O_move(2, 0);
                 view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
 
                 s.serverBoard = String.valueOf(Game.getNewBoard());
                 gameBoard = model.getNewBoard();
                     view.Btn7.setDisable(true);
-                    hostTurn = false;
-                    clientTurn = true;
+                    yourTurn=false;
                     if (Evaluation.O_CheckForWinner()){
                         DisableAllButtons(view);
                         startOAnimation();
@@ -583,15 +636,15 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
                 }
 
             } else if (model.isClient) {
-                    if (clientTurn) {
+                    if (yourTurn) {
                     model.X_move(2, 0);
                 gameBoard =model.getNewBoard();
                 view.Btn7.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
 
                 c.communicate("changeboard," + String.valueOf(gameBoard)+"c");
                         view.Btn7.setDisable(true);
-                        clientTurn = false;
-                        hostTurn = true;
+                        yourTurn=false;
+
                         if (Evaluation.X_CheckForWinner()){
                             DisableAllButtons(view);
                             startXAnimation();
@@ -617,15 +670,14 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
 
         view.Btn8.setOnAction((event) -> {
             if (model.isHost) {
-                if (hostTurn) {
+                if (yourTurn) {
                     model.O_move(2, 1);
                     view.Btn8.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
 
                     s.serverBoard = String.valueOf(Game.getNewBoard());
                     gameBoard = model.getNewBoard();
                     view.Btn8.setDisable(true);
-                    hostTurn = false;
-                    clientTurn = true;
+                    yourTurn=false;
                     if (Evaluation.O_CheckForWinner()) {
                         DisableAllButtons(view);
                         startOAnimation();
@@ -644,7 +696,7 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
                 }
 
             } else if (model.isClient) {
-                if (clientTurn) {
+                if (yourTurn) {
                     model.X_move(2, 1);
 
                     gameBoard = model.getNewBoard();
@@ -652,8 +704,7 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
 
                     c.communicate("changeboard," + String.valueOf(gameBoard)+"c");
                     view.Btn8.setDisable(true);
-                    clientTurn = false;
-                    hostTurn = true;
+                    yourTurn = false;
                     if (Evaluation.X_CheckForWinner()) {
                         DisableAllButtons(view);
                         startXAnimation();
@@ -680,15 +731,15 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
 
         view.Btn9.setOnAction((event) -> {
             if (model.isHost) {
-                if (hostTurn) {
-                model.O_move(2, 2);
+                if (yourTurn) {
+                    yourTurn=false;
+
+                    model.O_move(2, 2);
                 view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/O.png')");
 
                 s.serverBoard = String.valueOf(Game.getNewBoard());
                 gameBoard = model.getNewBoard();
                     view.Btn9.setDisable(true);
-                    hostTurn = false;
-                    clientTurn = true;
                     if (Evaluation.O_CheckForWinner()){
                         DisableAllButtons(view);
                         startOAnimation();
@@ -707,15 +758,15 @@ public class TicTacToe_ControllerOnline extends ChangeModus {
                 }
 
             } else if (model.isClient) {
-                    if (clientTurn) {
+                    if (yourTurn) {
                     model.X_move(2, 2);
                 gameBoard =model.getNewBoard();
                 view.Btn9.setStyle("-fx-background-image: url('Main/Stuff/X.png')");
 
                 c.communicate("changeboard," + String.valueOf(gameBoard)+"c");
                         view.Btn9.setDisable(true);
-                        clientTurn = false;
-                        hostTurn = true;
+                        yourTurn=false;
+
                         if (Evaluation.X_CheckForWinner()){
                             DisableAllButtons(view);
                             startXAnimation();

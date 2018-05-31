@@ -57,17 +57,13 @@ public class Server  {
 
 
                 if(s.contains("getBoard")){
-                    if (turn){
-                        mTicTacToe_ControllerOnline.hostTurn=true;
-                        mTicTacToe_ControllerOnline.clientTurn=false;
-                    }
+
                     writer.println(serverBoard);
                     writer.flush();
                 }
                 if(s.contains("changeboard")){
 
-                    mTicTacToe_ControllerOnline.hostTurn=true;
-                    mTicTacToe_ControllerOnline.clientTurn=false;
+                    mTicTacToe_ControllerOnline.yourTurn=true;
                     turn=true;
 
                     serverBoard = s.substring(12,21);
